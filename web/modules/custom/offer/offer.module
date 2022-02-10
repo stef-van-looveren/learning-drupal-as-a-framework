@@ -1,0 +1,71 @@
+<?php
+
+use Drupal\Core\Render\Element;
+use Drupal\views\ViewExecutable;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function offer_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  $forms = ['offer_step_1_form', 'offer_step_2_form', 'offer_step_3_form', 'offer_edit_form'];
+  if (in_array($form_id, $forms)) {
+    // Prevent revision log box access
+    $form['revision_log']['#access'] = FALSE;
+  }
+}
+
+/**
+ * Provides a theme definition for custom content entity offer
+ * {@inheritdoc}
+ */
+function offer_theme($existing, $type, $theme, $path) {
+  return [
+    'offer' => [
+      'render element' => 'elements',
+    ],
+    'offer__full' => [
+      'base hook' => 'offer',
+    ],
+    'offer__teaser' => [
+      'base hook' => 'offer'
+    ],
+  ];
+}
+
+/**
+ * Prepares variables for templates.
+ * implements hook_preprocess_HOOK()
+ */
+function template_preprocess_offer(array &$variables)
+{
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+
+  $offer = $variables['elements']['#offer'];
+  // The full offer object
+  $variables['offer'] = $offer;
+
+}
+
+/**
+ * Adds template possibility for view modes
+ * Implements hook_provider_theme_suggestions_hook_alter
+ */
+function offer_theme_suggestions_offer_alter( array &$suggestions, array $vars, $hook ) {
+  if ( $offer = $vars['elements']['#offer'] ) {
+    if (isset($vars['elements']['#view_mode'])) {
+      $suggestions[] = 'offer__' . $vars['elements']['#view_mode'];
+    }
+  }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function offer_views_pre_render(ViewExecutable $view) {
+  if (isset($view) && ($view->storage->id() == 'offer_overview')) {
+    $view->element['#attached']['library'][] = 'offer/offer_overview_page';
+  }
+}

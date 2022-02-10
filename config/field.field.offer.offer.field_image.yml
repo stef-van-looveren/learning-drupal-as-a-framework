@@ -1,0 +1,30 @@
+uuid: b828fbde-b976-42bf-9585-ff56035c0d5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.offer.field_image
+    - media.type.image
+  module:
+    - offer
+id: offer.offer.field_image
+field_name: field_image
+entity_type: offer
+bundle: offer
+label: Image
+description: 'Market your offer with a tremendous image!'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
