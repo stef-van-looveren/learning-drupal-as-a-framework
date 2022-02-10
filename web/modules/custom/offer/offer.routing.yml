@@ -1,0 +1,89 @@
+entity.offer.edit_form:
+  path: '/offers/{offer}/edit'
+  defaults:
+    _entity_form: offer.edit
+    _title: 'Edit offer'
+  requirements:
+    _entity_access: 'offer.edit'
+
+entity.offer.delete_form:
+  path: '/offers/{offer}/delete'
+  defaults:
+    _entity_form: offer.delete
+    _title: 'Delete offer'
+  requirements:
+    _entity_access: 'offer.delete'
+
+entity.offer.canonical:
+  path: '/offer/{offer}'
+  defaults:
+    _entity_view: 'offer'
+    _title: 'Offer'
+  requirements:
+    _entity_access: 'offer.view'
+  options:
+    parameters:
+      offer:
+        type: entity:offer
+
+entity.offer.collection:
+  path: '/offers'
+  requirements:
+    _permission: 'administer own offers'
+
+entity.offer.settings:
+  path: '/admin/structure/offer'
+  defaults:
+    _form: '\Drupal\offer\Form\OfferSettingsForm'
+    _title: 'Offer settings'
+  requirements:
+    _permission: 'administer own offers'
+
+offer.publish:
+  path: '/offers/publish/{offer}'
+  defaults:
+    _controller: '\Drupal\offer\Controller\OfferPublishController::Render'
+    _title_callback: 'Publish offer'
+  requirements:
+    _custom_access: '\Drupal\offer\Controller\OfferPublishController::Access'
+  options:
+    parameters:
+      offer:
+        type: entity:offer
+
+offer.add:
+  path: '/offers/create'
+  defaults:
+    _entity_form: offer.step_1
+    _title: 'Step 1: set your title'
+  requirements:
+    _entity_create_access: 'offer'
+
+offer.step1:
+  path: '/offers/create/{offer}'
+  defaults:
+    _entity_form: offer.step_1
+    _title: 'Step 1: set your title'
+  requirements:
+    _entity_create_access: 'offer'
+
+offer.step2:
+  path: '/offers/create/step2/{offer}'
+  defaults:
+    _entity_form: offer.step_2
+    _title: 'Step 2: add a description and image'
+  requirements:
+    _entity_access: 'offer.edit'
+
+offer.step3:
+  path: '/offers/create/step3/{offer}'
+  defaults:
+    _entity_form: offer.step_3
+    _title: 'Step 3: choose the type of offer'
+  requirements:
+    _entity_access: 'offer.edit'
+
+
+
+
+

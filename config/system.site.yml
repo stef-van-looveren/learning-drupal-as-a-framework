@@ -1,0 +1,14 @@
+uuid: 66b5bd11-f345-42e4-8a9c-fc2a7b11764b
+name: stef
+mail: sas@vito.be
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /offer
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI

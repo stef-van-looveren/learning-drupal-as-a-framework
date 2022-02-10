@@ -1,0 +1,22 @@
+uuid: b4b823c1-71a0-4a5b-b668-acfada97ae16
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access content'
+  - 'administer own offers'
+  - 'create image media'
+  - 'create media'
+  - 'delete media'
+  - 'delete own image media'
+  - 'edit own image media'
+  - 'update media'
+  - 'use text format html'
+  - 'view media'
+  - 'view own unpublished media'
