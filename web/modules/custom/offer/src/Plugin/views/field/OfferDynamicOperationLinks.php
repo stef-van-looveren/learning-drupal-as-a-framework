@@ -76,13 +76,6 @@ class OfferDynamicOperationLinks extends FieldPluginBase
           'url' => Url::fromRoute('offer.publish', ['offer' => $entity->id()])
         ];
         break;
-
-        case 'published':
-          $operations['expire'] = [
-            'title' => $this->t('Make expired'),
-            'url' =>  Url::fromRoute('offer.expire', ['offer' => $entity->id()])
-          ];
-          break;
     }
 
     $operations['edit'] = [

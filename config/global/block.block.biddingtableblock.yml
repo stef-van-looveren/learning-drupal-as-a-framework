@@ -1,10 +1,11 @@
-uuid: 29caf1b5-15c0-468f-93ca-e335c9f945da
+uuid: 327f09e6-9f86-4833-82aa-d5c5013bdb62
 langcode: en
 status: true
 dependencies:
   module:
     - offer
     - system
+    - user
   theme:
     - gin
 id: biddingtableblock
@@ -15,7 +16,7 @@ provider: null
 plugin: offer_bidding_table_block
 settings:
   id: offer_bidding_table_block
-  label: 'Current bids'
+  label: 'Bidding table block'
   provider: offer
   label_display: '0'
 visibility:
@@ -23,3 +24,10 @@ visibility:
     id: request_path
     pages: '/offer/*'
     negate: false
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

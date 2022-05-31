@@ -1,4 +1,4 @@
-uuid: 59fd059c-0524-4f73-98f5-1d32fb0a851c
+uuid: d3b7b240-c457-4d66-8d1f-fabbd4c76095
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,6 @@ dependencies:
     - field.field.offer.offer.field_price
   module:
     - offer
-    - options
 id: offer.offer.teaser
 targetEntityType: offer
 bundle: offer
@@ -25,16 +24,9 @@ content:
       link: false
     third_party_settings: {  }
     region: content
-  field_offer_type:
-    weight: 2
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
-    region: content
   field_price:
-    weight: 3
-    label: hidden
+    weight: 2
+    label: above
     settings:
       thousand_separator: ''
       decimal_separator: .
@@ -44,7 +36,7 @@ content:
     type: number_decimal
     region: content
   title:
-    label: hidden
+    label: above
     type: string
     weight: 0
     region: content
@@ -54,4 +46,5 @@ content:
 hidden:
   content_moderation_control: true
   field_description: true
+  field_offer_type: true
   user_id: true

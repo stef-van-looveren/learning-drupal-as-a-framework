@@ -1,4 +1,5 @@
 <?php
+
 namespace Drupal\offer\Form;
 
 use Drupal\Core\Form\FormBase;
@@ -130,7 +131,7 @@ class RegistrationForm extends FormBase {
     $user->activate();
     $user->save();
     user_login_finalize($user); // logs a new session etc.
-    // This will redirect with UserLoginEvent
+    // This will redirect with StackMiddleware
   }
 
 }

@@ -1,4 +1,4 @@
-uuid: fd20fc9c-63a0-4043-b6bf-46cbb1de56bb
+uuid: ae7bd648-062d-4f8d-b2f2-240168651f00
 langcode: en
 status: true
 dependencies:
@@ -18,10 +18,10 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  file_directory: users
+  file_directory: profile
   file_extensions: 'png gif jpg jpeg'
   max_filesize: ''
-  max_resolution: 500x500
+  max_resolution: ''
   min_resolution: ''
   alt_field: true
   alt_field_required: false

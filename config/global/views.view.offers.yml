@@ -1,4 +1,4 @@
-uuid: ba118177-ab82-48a3-aac6-45e3c366b678
+uuid: ca7d2585-422c-4872-8a44-fa740b66b7cd
 langcode: en
 status: true
 dependencies:
@@ -6,9 +6,9 @@ dependencies:
     - offer
     - user
 _core:
-  default_config_hash: e4CfjjgjebuQMYuYcdy9oBCKknyiPBSVlGJm7ihjDus
+  default_config_hash: qa51DWQiX3I0lD0HTqe1N46CX8PjvjSgSn2ZF1BAWu4
 id: offers
-label: Offers
+label: offers
 module: views
 description: ''
 tag: ''
@@ -18,7 +18,7 @@ display:
   default:
     display_plugin: default
     id: default
-    display_title: Master
+    display_title: Default
     position: 0
     display_options:
       access:
@@ -47,23 +47,10 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
-        type: mini
+        type: none
         options:
-          items_per_page: 10
+          items_per_page: 0
           offset: 0
-          id: 0
-          total_pages: null
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
-          tags:
-            previous: ‹‹
-            next: ››
       style:
         type: table
       row:
@@ -174,7 +161,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -184,14 +171,14 @@ display:
           hide_alter_empty: false
           entity_type: offer
           plugin_id: offer_entity_moderation_state_views_field
-        offer_dynamic_operation_links:
-          id: offer_dynamic_operation_links
+        offer_dynamic_option_links:
+          id: offer_dynamic_option_links
           table: offer
-          field: offer_dynamic_operation_links
+          field: offer_dynamic_option_links
           relationship: none
           group_type: group
           admin_label: ''
-          label: Actions
+          label: Action
           exclude: false
           alter:
             alter_text: false
@@ -239,18 +226,7 @@ display:
       title: 'My offers'
       header: {  }
       footer: {  }
-      empty:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: false
-          content: '<p>You have no offers yet. Click the blue button on the right to add your first.</p>'
-          plugin_id: text_custom
+      empty: {  }
       relationships: {  }
       arguments:
         user_id:
@@ -296,7 +272,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - url.query_args
         - user
         - user.permissions
       tags: {  }
@@ -314,7 +289,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - url.query_args
         - user
         - user.permissions
       tags: {  }

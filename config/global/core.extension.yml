@@ -15,6 +15,7 @@ module:
   image: 0
   media: 0
   media_library: 0
+  node: 0
   notification: 0
   offer: 0
   options: 0

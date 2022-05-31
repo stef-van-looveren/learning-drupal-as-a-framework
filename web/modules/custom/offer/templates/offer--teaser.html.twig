@@ -1,14 +1,15 @@
 <a href="{{ path('entity.offer.canonical', {'offer': offer.id()}) }}" {{ attributes.addClass('offer-teaser') }}>
-  {% if promo %}<div class="badge">{{promo }}</div>{% endif %}
-  <div class="product-tumb">
+  {% if offer.getBidAmount() < 1 %}
+    <div class="badge">Be the first!</div>
+  {% endif %}
+  <div class="product-thumb">
     {{ content.field_image }}
   </div>
   <div class="product-details">
     <h4>{{ offer.label() }}</h4>
-    <p>{{ bid_amount }} bids</p>
+    <p>{{ offer.getBidAmount() }} bids</p>
     <div class="product-bottom-details">
-      <div class="product-price">{{ price }}</div>
-      <div class="product-user-profile">{{ user_profile }}</div>
+      <div class="product-price">{{ offer.getPriceAmount() }}</div>
     </div>
   </div>
 </a>

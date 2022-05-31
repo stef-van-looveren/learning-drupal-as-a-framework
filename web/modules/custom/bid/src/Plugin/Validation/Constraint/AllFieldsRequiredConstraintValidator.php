@@ -6,13 +6,11 @@ use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 
 /**
- * Validates the AllFieldsRequired constraint.
+ * Validates our AllFieldsRequired constraint
  */
 class AllFieldsRequiredConstraintValidator extends ConstraintValidator {
-  /**
-   * {@inheritdoc}
-   */
-  public function validate($entity, Constraint $constraint) {
+  public function validate($entity, Constraint $constraint)
+  {
     if ($entity->get('user_id')->isEmpty()) {
       $this->context->addViolation($constraint->message);
     }
@@ -23,5 +21,4 @@ class AllFieldsRequiredConstraintValidator extends ConstraintValidator {
       $this->context->addViolation($constraint->message);
     }
   }
-
 }

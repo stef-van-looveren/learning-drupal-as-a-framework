@@ -6,13 +6,16 @@
 
 namespace Drupal\offer\Entity;
 
+use Drupal\bid\Entity\Bid;
+use Drupal\Component\Serialization\Json;
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Entity\EditorialContentEntityBase;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Entity\EntityTypeInterface;
-use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
-use Drupal\bid\Entity\Bid;
-use Drupal\Core\Cache\Cache;
+use Drupal\Core\Link;
+use Drupal\Core\Render\Markup;
+use Drupal\notification\Entity\Notification;
 
 /**
  * Defines the offer entity.
@@ -36,30 +39,30 @@ use Drupal\Core\Cache\Cache;
  *     "uid" = "uid",
  *     "owner" = "uid",
  *   },
- *   handlers = {
- *     "access" = "Drupal\offer\OfferAccessControlHandler",
- *     "form" = {
- *       "add" = "Drupal\offer\Form\OfferForm",
- *       "edit" = "Drupal\offer\Form\OfferForm",
- *       "step_1" = "Drupal\offer\Form\OfferAddFormStep1",
- *       "step_2" = "Drupal\offer\Form\OfferAddFormStep2",
- *       "step_3" = "Drupal\offer\Form\OfferAddFormStep3",
- *       "delete" = "Drupal\offer\Form\OfferDeleteForm",
- *     },
- *     "views_data" = "Drupal\offer\OfferViewsData",
- *   },
- *   links = {
- *     "canonical" = "/offers/{offer}",
- *     "delete-form" = "/offer/{offer}/delete",
- *     "edit-form" = "/offer/{offer}/edit",
- *     "create" = "/offer/create",
- *   },
- *   field_ui_base_route = "entity.offer.settings",
  *   revision_metadata_keys = {
  *     "revision_user" = "revision_uid",
  *     "revision_created" = "revision_timestamp",
  *     "revision_log_message" = "revision_log"
  *   },
+ *   handlers = {
+ *     "access" = "Drupal\offer\OfferAccessControlHandler",
+ *     "views_data" = "Drupal\offer\OfferViewsData",
+ *     "form" = {
+ *      "add" = "Drupal\offer\Form\OfferForm",
+ *      "step_1" = "Drupal\offer\Form\OfferAddFormStep1",
+ *      "step_2" = "Drupal\offer\Form\OfferAddFormStep2",
+ *      "step_3" = "Drupal\offer\Form\OfferAddFormStep3",
+ *      "edit" = "Drupal\offer\Form\OfferForm",
+ *      "delete" = "Drupal\offer\Form\OfferDeleteForm",
+ *     }
+ *   },
+ *   links = {
+ *     "canonical" = "/offers/{offer}",
+ *     "delete-form" = "/offer/{offer}/delete",
+ *     "edit-form" = "/offer/{offer}/edit",
+ *     "create" = "/offer/create"
+ *   },
+ *   field_ui_base_route = "entity.offer.settings"
  * )
  */
 
@@ -142,46 +145,24 @@ class Offer extends EditorialContentEntityBase {
   /**
    * {@inheritdoc}
    */
-  public static function preDelete(EntityStorageInterface $storage, array $entities) {
+  public static function preDelete(EntityStorageInterface $storage, array $entities)
+  {
     parent::preDelete($storage, $entities);
 
     // Delete all bids and notifications of the offer that will be deleted
-    foreach ($entities as $entity) {
+    foreach($entities as $entity) {
       $entity->deleteAllLinkedBids();
       $entity->deleteAllLinkedNotifications();
+      Cache::invalidateTags(['my_offers_user_' . $entity->getOwnerId()]);
     }
   }
 
   /**
-   * {@inheritdoc}
-   */
-  public function postCreate(EntityStorageInterface $storage) {
-    Cache::invalidateTags(['my_offers_user_'. $this->getOwnerId()]);
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function postDelete(EntityStorageInterface $storage, array $entities) {
-    parent::preDelete($storage, $entities);
-
-    // Delete all bids and notifications of the offer that will be deleted
-    foreach ($entities as $entity) {
-      $entity->deleteAllLinkedBids();
-      $entity->deleteAllLinkedNotifications();
-      Cache::invalidateTags(['my_offers_user_'. $entity->getOwnerId()]);
-    }
-
-  }
-
-  /**
-   * Deletes all bids linked to the offer.
+   * Delete all bids linked to the offer
    * @param bool $delete
-   * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public function deleteAllLinkedBids($delete = FALSE) {
+  public function deleteAllLinkedbids($delete = FALSE) {
     $id = $this->id();
-
     $query = \Drupal::entityQuery('bid')
       ->condition('offer_id', $id);
     $bidIds = $query->execute();
@@ -194,7 +175,6 @@ class Offer extends EditorialContentEntityBase {
   /**
    * Deletes all notifications linked to the offer.
    * @param bool $delete
-   * @throws \Drupal\Core\Entity\EntityStorageException
    */
   public function deleteAllLinkedNotifications($delete = FALSE) {
     $id = $this->id();
@@ -224,9 +204,40 @@ class Offer extends EditorialContentEntityBase {
   }
 
   /**
-   * Returns the highest bid on an offer
-   * @return integer $price
-   *  The price
+   * Returns a promotext
+   * @return string
+   */
+  public function getPromoText() {
+    return 'Be the first!';
+  }
+
+  /**
+   * Return a price string based on field_price
+   * @return string
+   */
+  public function getPriceAmount() {
+    $price = '';
+    $OfferHasBid = $this->getOfferHighestBid();
+    switch($this->get('field_offer_type')->getString()) {
+      case 'with_minimum':
+        $price = $this->get('field_price')->getString() . '$';
+        break;
+      case 'no_minimum':
+        $price = 'Start bidding at 0$';
+        break;
+    }
+    if($OfferHasBid) {
+      $price = 'Highest bid currently ' . $OfferHasBid . '$';
+    } else {
+      $price = 'No bids yet. Grab your chance!';
+    }
+    return $price;
+  }
+
+  /**
+   * Return the highest bid on an offer
+   * @return integer|null
+   *  The bid price
    */
   public function getOfferHighestBid() {
     $bids = [];
@@ -264,6 +275,89 @@ class Offer extends EditorialContentEntityBase {
   }
 
   /**
+   * Returns the bid amount
+   * @return int
+   *  a count of the amount of bids
+   */
+  public function getBidAmount() {
+    $bids = $this->getOfferBids();
+    return count($bids);
+  }
+
+  /**
+   * Returns a rendered table below an offer
+   * @return a drupal table render array
+   */
+  public function getOfferBiddingTable() {
+    $bids = $this->getOfferBids();
+    $rows = [];
+    foreach($bids as $bid) {
+      $price = $bid->get('bid')->getString();
+      $owner = $bid->getOwner();
+      $ownerName = $owner->getDisplayName();
+      $time = \Drupal::service('date.formatter')->formatTimeDiffSince($bid->created->value);
+
+      $updates = '';
+      if($bid->hasRevisions()) {
+        $revisions = $bid->getRevisionsList();
+        // We now have the list of revisions.
+        // Let's compare the latest bid with the last revision
+        $current_revision_id = $bid->getLoadedRevisionId();
+        // We now know the current, we want the one before the current
+        // We remove the current from the revisions list
+        unset($revisions[$current_revision_id]);
+        $last_revision_id = max(array_keys($revisions));
+        $revisionBid = \Drupal::entityTypeManager()
+          ->getStorage('bid')
+          ->loadRevision($last_revision_id);
+        $revisionAmount = $revisionBid->get('bid')->getString();
+        $priceDifference = $price - $revisionAmount;
+        $priceDifference = $priceDifference . '$';
+        $updates = '
+          <svg width="24px" height="18px" viewBox="0 0 24 24" fill="#61f70a" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6.1018 16.9814C5.02785 16.9814 4.45387 15.7165 5.16108 14.9083L10.6829 8.59762C11.3801 7.80079 12.6197 7.80079 13.3169 8.59762L18.8388 14.9083C19.5459 15.7165 18.972 16.9814 17.898 16.9814H6.1018Z" fill="#61f70a"/>
+          </svg><small style="color:#0444C4">Last raise was ' . $priceDifference .'</small>';
+      }
+
+      $link = '';
+      if($bid->access('delete')) {
+        $url = $bid->toUrl('delete-form'); // we use the key of the entity form right here!
+        $deleteLink = [
+          '#type' => 'link',
+          '#title' => 'Remove bid',
+          '#url' => $url,
+          '#attributes' => [
+            'class' => [
+              'use-ajax', 'button', 'button-small', 'button-danger'
+            ],
+            'data-dialog-type' => 'modal',
+            'data-dialog-options' => Json::encode(['title' => t('Remove bid?'), 'width' => 800])
+          ],
+        ];
+        $link = \Drupal::service('renderer')->render($deleteLink);
+      }
+
+      $row = [
+        Markup::create($ownerName . ' - ' . $time .' ago'),
+        Markup::create($price . '$' . $updates),
+        Markup::create($link)
+      ];
+      $rows[]= $row;
+    }
+    $build['table'] = [
+      '#type' => 'table',
+      '#rows' => $rows,
+      '#empty' => t('This offer has no bids yet. Grab your chance!')
+    ];
+
+    return [
+      '#type' => '#markup',
+      '#markup' => \Drupal::service('renderer')->render($build)
+    ];
+
+  }
+
+  /**
    * Checks if the current user has bids on the current offer
    * @return bool
    *  True if it has, false if it doesn't
@@ -272,7 +366,7 @@ class Offer extends EditorialContentEntityBase {
     $user_id = \Drupal::currentUser()->id();
     $id = $this->id();
     $query = \Drupal::entityQuery('bid')
-      ->condition('offer_id', $id)
+      ->condition('offer_id',$id)
       ->condition('user_id', $user_id);
     $count = $query->count()->execute();
     if($count > 0) {
@@ -300,3 +394,18 @@ class Offer extends EditorialContentEntityBase {
   }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

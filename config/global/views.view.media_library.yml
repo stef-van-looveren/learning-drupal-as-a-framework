@@ -1,4 +1,4 @@
-uuid: 2c45f7d2-d3fd-4497-852f-6276838e0b86
+uuid: 693477de-42a7-4bd2-b1c3-e0073bd71d86
 langcode: en
 status: true
 dependencies:
@@ -14,7 +14,7 @@ dependencies:
     - media_library
     - user
 _core:
-  default_config_hash: dHOSWSHbMJNke0ZBGh1O5KrnwynSOCOpQycITW-pwfs
+  default_config_hash: B7zlgfGfp6gUvo8b_vHyjDYHfE5skHIUkLsII0mtU5s
 id: media_library
 label: 'Media library'
 module: views
@@ -26,7 +26,7 @@ display:
   default:
     display_plugin: default
     id: default
-    display_title: Master
+    display_title: Default
     position: 0
     display_options:
       access:

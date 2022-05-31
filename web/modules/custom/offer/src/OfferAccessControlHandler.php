@@ -12,7 +12,8 @@ use Drupal\Core\Session\AccountInterface;
  *
  * @see \Drupal\offer\Entity\Offer.
  */
-class OfferAccessControlHandler extends EntityAccessControlHandler {
+class OfferAccessControlHandler extends EntityAccessControlHandler
+{
 
   /**
    * {@inheritdoc}
@@ -20,7 +21,8 @@ class OfferAccessControlHandler extends EntityAccessControlHandler {
    * Link the activities to the permissions. checkAccess is called with the
    * $operation as defined in the routing.yml file.
    */
-  protected function checkAccess(EntityInterface $entity, $operation, AccountInterface $account) {
+  protected function checkAccess(EntityInterface $entity, $operation, AccountInterface $account)
+  {
 
     $access = AccessResult::forbidden();
 
@@ -35,7 +37,7 @@ class OfferAccessControlHandler extends EntityAccessControlHandler {
           // published, expired
           $access = AccessResult::allowed()->addCacheableDependency($entity);
         }
-        break;;
+        break;
       case 'update': // Shows the edit buttons in operations
         if ($account->hasPermission('administer own offers')) {
           $access = AccessResult::allowedIf($account->id() == $entity->getOwnerId())->cachePerUser()->addCacheableDependency($entity);
@@ -62,10 +64,8 @@ class OfferAccessControlHandler extends EntityAccessControlHandler {
    * Separate from the checkAccess because the entity does not yet exist, it
    * will be created during the 'add' process.
    */
-  protected function checkCreateAccess(AccountInterface $account, array $context, $entity_bundle = NULL) {
+  protected function checkCreateAccess(AccountInterface $account, array $context, $entity_bundle = NULL)
+  {
     return AccessResult::allowedIfHasPermission($account, 'administer own offers');
   }
-
 }
-
-?>

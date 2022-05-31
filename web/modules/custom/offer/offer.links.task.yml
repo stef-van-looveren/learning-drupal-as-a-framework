@@ -1,4 +1,4 @@
-# Activates the tabs on the entity admin pages (/admin/structure/offer)
+#activates the tabs on the entity admin pages
 offer.settings_tab:
   route_name: entity.offer.settings
   title: 'Settings'

@@ -1,4 +1,4 @@
-uuid: 531c0649-9118-474b-984e-519e82c8ad6f
+uuid: 50873b8a-00d6-4d8d-b223-7fcbb85658bc
 langcode: en
 status: true
 dependencies:
@@ -14,18 +14,26 @@ bundle: user
 mode: default
 content:
   account:
-    weight: 0
+    weight: -10
     region: content
     settings: {  }
     third_party_settings: {  }
   field_profile_image:
-    weight: 1
+    weight: 7
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
     region: content
-hidden:
-  language: true
-  timezone: true
+  language:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  timezone:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

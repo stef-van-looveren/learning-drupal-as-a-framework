@@ -1,8 +1,0 @@
-<div class="user">
-  <div class="profile">
-    {% if not user.field_profile_image.isempty %}
-      <div class="image" style="background:url('{{ file_url(user.field_profile_image.entity.fileuri) }}');background-repeat:no-repeat;background-size:cover;"></div>
-    {% endif %}
-    <div class="username">{{ user.displayname }}</div>
-  </div>
-</div>

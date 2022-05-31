@@ -34,6 +34,7 @@ class OfferDeleteForm extends ContentEntityConfirmFormBase {
     return Url::fromRoute('entity.offer.edit_form', ['offer' => $this->entity->id()]);
   }
 
+
   /**
    * {@inheritdoc}
    */

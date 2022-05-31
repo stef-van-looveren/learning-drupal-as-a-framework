@@ -1,4 +1,4 @@
-uuid: 037beede-de94-4080-8cd8-de7d3ebfff28
+uuid: 60219ab3-572d-4037-b933-1186b5029123
 langcode: en
 status: true
 dependencies:
@@ -23,7 +23,7 @@ content:
     region: content
   member_for:
     weight: 5
-    region: content
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden: {  }

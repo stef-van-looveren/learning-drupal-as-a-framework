@@ -1,4 +1,4 @@
-uuid: ba5bbae2-4afd-4b88-b509-ba92b0487814
+uuid: 41b01532-6f33-4a97-bcf8-d7f9deffc6c2
 langcode: en
 status: true
 dependencies:
@@ -12,7 +12,7 @@ field_name: field_description
 entity_type: offer
 bundle: offer
 label: Description
-description: 'Be as complete as possible about your offe'
+description: 'Be as complete as possible about your offer'
 required: false
 translatable: false
 default_value: {  }

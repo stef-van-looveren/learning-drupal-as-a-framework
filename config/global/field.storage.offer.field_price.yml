@@ -1,4 +1,4 @@
-uuid: 6b2e4fea-9c0f-43d2-867a-cc91637e36ae
+uuid: cbf221a1-7d03-4cf5-a889-4afe898e04dd
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ entity_type: offer
 type: decimal
 settings:
   precision: 10
-  scale: 2
+  scale: 0
 module: core
 locked: false
 cardinality: 1

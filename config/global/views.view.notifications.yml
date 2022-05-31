@@ -5,7 +5,7 @@ dependencies:
   module:
     - notification
 _core:
-  default_config_hash: wGOFTB1gcMCO5g6nSPwqK7zwb_FEXnSLPkwblW4LXQU
+  default_config_hash: gOVnCwqH4YwfQWyp2ppBsvljDVSfDQlnZfxPiEbhGOU
 id: notifications
 label: Notifications
 module: views
@@ -148,7 +148,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: 'No notifications!'
+            value: 'No notifications so far!'
             format: html
           plugin_id: text
       relationships: {  }

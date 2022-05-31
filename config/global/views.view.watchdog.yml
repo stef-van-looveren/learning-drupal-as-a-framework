@@ -1,4 +1,4 @@
-uuid: 80effeb5-c26d-47be-8b4f-7fa29ffe49af
+uuid: defcadf1-583f-4529-a8a3-a1564a1ede76
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     - dblog
     - user
 _core:
-  default_config_hash: QFezQ4TbnTzUO15iTk6-flc68pzr437FjP3nJ_qXM9M
+  default_config_hash: d_YYDAS1Anyj4eLOXI9DnSIAbSX6Kk-qpa71pawlLYI
 id: watchdog
 label: Watchdog
 module: views
@@ -18,7 +18,7 @@ display:
   default:
     display_plugin: default
     id: default
-    display_title: Master
+    display_title: Default
     position: 0
     display_options:
       access:

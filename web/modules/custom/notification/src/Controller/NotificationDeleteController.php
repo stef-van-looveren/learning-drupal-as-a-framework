@@ -1,21 +1,21 @@
 <?php
-
 namespace Drupal\notification\Controller;
 
-use Drupal\Core\Controller\ControllerBase;
-use Drupal\notification\Ajax\DeleteNotificationCommand;
-use Drupal\Core\Ajax\AjaxResponse;
-use Drupal\notification\Entity\Notification;
 use Drupal\Core\Access\AccessResult;
-use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Url;
+use Drupal\notification\Entity\Notification;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\notification\Ajax\DeleteNotificationCommand;
 
 /**
- * Class NotificationDeleteController.php.
+ * Class NotificationDeleteController
  */
 class NotificationDeleteController extends ControllerBase {
 
-  public function Render($id, $method) {
+  public function render($id, $method) {
+
     // Load the notification
     $notification = Notification::load($id);
 
@@ -32,15 +32,25 @@ class NotificationDeleteController extends ControllerBase {
 
     if($method == 'ajax') {
       $response = new AjaxResponse();
-      $response->addCommand(new DeleteNotificationCommand('DeleteNotification'));
+      $response->addCommand(new DeleteNotificationCommand());
     } else {
-      // no javascript: send back to page
-      $path = Url::fromRoute('view.notifications.page_1')->toString();
+      // no javascript
+      $path = Url::fromRoute('view.notifications.page_1');
       $response = new RedirectResponse($path);
       $response->send();
     }
 
     return $response;
-  }
 
+  }
 }
+
+
+
+
+
+
+
+
+
+

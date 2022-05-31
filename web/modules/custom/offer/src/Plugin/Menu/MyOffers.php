@@ -2,19 +2,18 @@
 namespace Drupal\offer\Plugin\Menu;
 
 use Drupal\Core\Menu\MenuLinkDefault;
-use Drupal\Core\Cache\Cache;
-
 /**
- * displays number of offers.
+ * Displays the number of offers.
  */
 class MyOffers extends MenuLinkDefault {
 
   /**
    * {@inheritdoc}
    */
-  public function getTitle() {
+  public function getTitle()
+  {
     $count = 0;
-    if(\Drupal::currentUser()->isAuthenticated()) {
+    if (\Drupal::currentUser()->isAuthenticated()) {
       $offers = \Drupal::entityTypeManager()
         ->getStorage('offer')
         ->loadByProperties(['user_id' => \Drupal::currentUser()->id()]);
@@ -28,8 +27,27 @@ class MyOffers extends MenuLinkDefault {
   /**
    * {@inheritdoc}
    */
-  public function getCacheTags() {
-    return Cache::mergeTags(parent::getCacheTags(), array('my_offers_user_'. \Drupal::currentUser()->id()));
+  public function getCacheContexts(){
+    return ['user'];
+  }
+
+  public function getCacheTags()
+  {
+    return ['my_offers_user_' . \Drupal::currentUser()->id()];
   }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

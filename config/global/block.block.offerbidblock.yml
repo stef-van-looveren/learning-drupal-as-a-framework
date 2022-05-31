@@ -1,14 +1,13 @@
-uuid: 40d9d6f0-5d19-44ba-844e-c412dcbd63ae
+uuid: 8ef29e9a-7054-4fd5-9323-927f34f05802
 langcode: en
 status: true
 dependencies:
   module:
     - offer
-    - system
     - user
   theme:
     - gin
-id: bid_block
+id: offerbidblock
 theme: gin
 region: content
 weight: -3
@@ -27,7 +26,3 @@ visibility:
     negate: false
     context_mapping:
       user: '@user.current_user_context:current_user'
-  request_path:
-    id: request_path
-    pages: '/offer/*'
-    negate: false

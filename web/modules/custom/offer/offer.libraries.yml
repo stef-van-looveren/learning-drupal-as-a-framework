@@ -9,5 +9,4 @@ platform:
   dependencies:
     - core/drupal.ajax
     - core/jquery
-    - core/drupal
-
+    - code/drupal

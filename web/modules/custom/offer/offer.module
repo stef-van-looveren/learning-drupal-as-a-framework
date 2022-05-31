@@ -1,9 +1,21 @@
 <?php
+
 use Drupal\Core\Render\Element;
 use Drupal\views\ViewExecutable;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\offer\Event\UserLoginEvent;
 use Drupal\notification\Entity\Notification;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+/**
+ * Implements hook_form_alter().
+ */
+function offer_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  $forms = ['offer_step_1_form', 'offer_step_2_form', 'offer_step_3_form', 'offer_edit_form'];
+  if (in_array($form_id, $forms)) {
+    // Prevent revision log box access
+    $form['revision_log']['#access'] = FALSE;
+  }
+}
 
 /**
  * Provides a theme definition for custom content entity offer
@@ -20,10 +32,6 @@ function offer_theme($existing, $type, $theme, $path) {
     'offer__teaser' => [
       'base hook' => 'offer'
     ],
-    'user__compact' => [
-      'template'  => 'user--compact',
-      'base hook' => 'user',
-    ],
   ];
 }
 
@@ -31,7 +39,8 @@ function offer_theme($existing, $type, $theme, $path) {
  * Prepares variables for templates.
  * implements hook_preprocess_HOOK()
  */
-function template_preprocess_offer(array &$variables) {
+function template_preprocess_offer(array &$variables)
+{
   foreach (Element::children($variables['elements']) as $key) {
     $variables['content'][$key] = $variables['elements'][$key];
   }
@@ -40,41 +49,6 @@ function template_preprocess_offer(array &$variables) {
   // The full offer object
   $variables['offer'] = $offer;
 
-  // The current price: minimum or highest bid if available
-  switch($offer->get('field_offer_type')->getString()) {
-    case 'with_minimum':
-      $price = 'Start bidding at '. $offer->get('field_price')->getString() . '$';
-      break;
-    case 'no_minimum';
-      $price = 'Start bidding at 0$';
-      break;
-  }
-  $OfferHasBid = $offer->getOfferHighestBid();
-  if($OfferHasBid) {
-    $price = 'Highest bid currently ' . $OfferHasBid . '$';
-    $variables['price'] = $price;
-  } else {
-    $variables['price'] = 'No bids yet. Grab your chance!';
-  }
-
-  // The amount of bids
-  $bid_amount = count($offer->getOfferBids());
-  $variables['bid_amount'] = $bid_amount;
-
-  // a promo badge
-  if(($bid_amount == 0) && (\Drupal::currentUser()->id() != $offer->getOwnerId())) {
-    $variables['promo'] = 'Be the first!';
-  }
-
-  // the user profile
-  // Render the 'compact' user profile
-  $entity_type = 'user';
-  $entity_id = $offer->getOwnerId();
-  $view_mode = 'compact';
-  $entity = \Drupal::entityTypeManager()->getStorage($entity_type)->load($entity_id);
-  $view_builder = \Drupal::entityTypeManager()->getViewBuilder($entity_type);
-  $user_to_render = $view_builder->view($entity, $view_mode);
-  $variables['user_profile'] = $user_to_render;
 }
 
 /**
@@ -99,21 +73,11 @@ function offer_views_pre_render(ViewExecutable $view) {
 }
 
 /**
- * Implements hook_form_alter().
- */
-function offer_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
-  $forms = ['offer_step_1_form', 'offer_step_2_form', 'offer_step_3_form', 'offer_edit_form'];
-  if (in_array($form_id, $forms)) {
-    // Prevent revision log box access
-    $form['revision_log']['#access'] = FALSE;
-  }
-}
-
-/**
  * Implements hook_page_attachments().
  */
 function offer_page_attachments(array &$attachments) {
   $attachments['#attached']['library'][] = 'offer/platform';
+  $attachments['#attached']['library'][] = 'notification/notification';
 }
 
 /**
@@ -127,18 +91,15 @@ function offer_preprocess_html(&$variables) {
 }
 
 /**
- * Implements hook_ENTITY_TYPE_update().
+ * Implements hook_ENTITY_TYPE_update()
  */
-function offer_offer_update(Drupal\Core\Entity\EntityInterface $entity) {
+function offer_offer_update(\Drupal\Core\Entity\EntityInterface $entity) {
+  // content moderation state
+  $currentState =  $entity->get('moderation_state')->getString();
 
-  // Current Moderation state
-  $currentState = $entity->get('moderation_state')->getString();
-
-  // Original Moderation state
+  // original moderation state
   $originalState = $entity->original->get('moderation_state')->getString();
 
-  // Check if transition equals "published" -> "expired"
-  // Save a notification for all bidders
   if(($originalState == 'published') && ($currentState == 'expired')) {
     $bids = $entity->getOfferBids();
     foreach($bids as $bid) {
@@ -151,33 +112,26 @@ function offer_offer_update(Drupal\Core\Entity\EntityInterface $entity) {
   }
 }
 
-/*
-* Implements hook_user_login()
-*/
+/**
+ * Implements hook_user_login()
+ */
 function offer_user_login($account) {
-  // Instantiate our event.
-  $event = new UserLoginEvent($account);
-  // Get the event_dispatcher service and dispatch the event to fire the event.
-  $event_dispatcher = \Drupal::service('event_dispatcher');
-  $event_dispatcher->dispatch(UserLoginEvent::EVENT_NAME, $event);
+  $middleware = \Drupal::service('http_middleware.redirect_users_after_login');
+  $response = new RedirectResponse("/");
+  $middleware->setRedirectResponse($response);
 }
 
-/**
- * Implements hook_theme_suggestions_HOOK().
- */
-function offer_theme_suggestions_user(array $variables) {
-  return [
-    'user__' . $variables['elements']['#view_mode']
-  ];
-}
 
-/**
- * Prepares variables for templates.
- * implements hook_preprocess_HOOK()
- */
-function template_preprocess_offer_userprofile(array &$variables)
-{
-  foreach (Element::children($variables['elements']) as $key) {
-    $variables['content'][$key] = $variables['elements'][$key];
-  }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+

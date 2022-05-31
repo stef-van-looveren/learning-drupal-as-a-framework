@@ -1,10 +1,10 @@
-uuid: 9be62042-27c1-4801-8fee-d439ef78dcf7
+uuid: 06d60d93-b812-424b-9d32-9dc6f4f3e0b4
 langcode: en
 status: true
 dependencies:
   module:
     - media
-name: Html
+name: html
 format: html
 weight: 0
 filters:

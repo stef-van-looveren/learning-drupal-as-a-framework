@@ -1,4 +1,4 @@
-uuid: b3eaa022-2a44-4a7a-82e2-44c9f750751a
+uuid: c1722fb6-2088-43a0-b505-54052446cb8d
 langcode: en
 status: true
 dependencies:
@@ -17,7 +17,7 @@ display:
   default:
     display_plugin: default
     id: default
-    display_title: Master
+    display_title: Default
     position: 0
     display_options:
       access:
@@ -47,7 +47,7 @@ display:
       pager:
         type: mini
         options:
-          items_per_page: 10
+          items_per_page: 25
           offset: 0
           id: 0
           total_pages: null
@@ -119,47 +119,19 @@ display:
           entity_type: offer
           plugin_id: rendered_entity
       filters:
-        offer_moderation_state_filter:
-          id: offer_moderation_state_filter
+        status:
+          value: '1'
           table: offer
-          field: offer_moderation_state_filter
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: in
-          value:
-            published: published
-          group: 1
-          exposed: false
+          field: status
+          plugin_id: boolean
+          entity_type: offer
+          entity_field: status
+          id: status
           expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
             operator: ''
             operator_limit_selection: false
             operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: offer
-          plugin_id: offer_moderation_state_filter
+          group: 1
       sorts: {  }
       title: 'Offer overview'
       header: {  }

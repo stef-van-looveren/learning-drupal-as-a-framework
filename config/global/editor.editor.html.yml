@@ -1,4 +1,4 @@
-uuid: 7f209754-3ba0-41e5-a2e2-d6f9f4ab8019
+uuid: bb0495aa-9c6c-45ef-96b1-c4e5f9d2fbfc
 langcode: en
 status: true
 dependencies:
@@ -31,7 +31,6 @@ settings:
           name: Media
           items:
             - Blockquote
-            - DrupalImage
         -
           name: Tools
           items:

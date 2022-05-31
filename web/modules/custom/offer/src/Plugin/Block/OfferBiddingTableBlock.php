@@ -1,14 +1,13 @@
 <?php
 
-namespace Drupal\offer\Plugin\Block;
+namespace  Drupal\offer\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Cache\Cache;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Drupal\Core\Entity\EntityStorageInterface;
-use Drupal\offer\OfferPreprocess\OfferPreprocess;
-use Drupal\Core\Cache\Cache;
 
 /**
  * @Block(
@@ -18,7 +17,8 @@ use Drupal\Core\Cache\Cache;
  * )
  */
 
-class OfferBiddingTableBlock extends BlockBase implements ContainerFactoryPluginInterface {
+class OfferBiddingTableBlock extends BlockBase implements ContainerFactoryPluginInterface
+{
 
   /**
    * The request object.
@@ -46,7 +46,8 @@ class OfferBiddingTableBlock extends BlockBase implements ContainerFactoryPlugin
    * @param \Drupal\Core\Entity\EntityStorageInterface $entity_storage
    *   The entity storage.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, RequestStack $request_stack, EntityStorageInterface $entity_storage) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, RequestStack $request_stack, EntityStorageInterface $entity_storage)
+  {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
 
     $this->requestStack = $request_stack;
@@ -56,7 +57,8 @@ class OfferBiddingTableBlock extends BlockBase implements ContainerFactoryPlugin
   /**
    * {@inheritdoc}
    */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition)
+  {
     return new static(
       $configuration,
       $plugin_id,
@@ -67,15 +69,14 @@ class OfferBiddingTableBlock extends BlockBase implements ContainerFactoryPlugin
   }
 
   /**
-   * {@inheritdoc}
+   * The bidding table
    */
   public function build() {
     $offer = $this->requestStack->getCurrentRequest()->get('offer');
     if(!$offer) {
       return null;
     }
-    $bid_table = OfferPreprocess::offerTable($offer);
-    return $bid_table;
+    return $offer->getOfferBiddingTable();
   }
 
   /**
@@ -91,7 +92,21 @@ class OfferBiddingTableBlock extends BlockBase implements ContainerFactoryPlugin
   public function getCacheTags() {
     $offer = $this->requestStack->getCurrentRequest()->get('offer');
     $offerId = $offer->id();
-    return Cache::mergeTags(parent::getCacheTags(), array('offer:'.$offerId));
+    return Cache::mergeTags(parent::getCacheTags(), ['offer:'.$offerId]);
   }
 
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

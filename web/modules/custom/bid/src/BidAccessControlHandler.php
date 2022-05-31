@@ -1,5 +1,4 @@
 <?php
-
 namespace Drupal\bid;
 
 use Drupal\Core\Access\AccessResult;
@@ -18,7 +17,7 @@ class BidAccessControlHandler extends EntityAccessControlHandler {
     $access = AccessResult::forbidden();
     switch ($operation) {
       case 'view':
-        $access = AccessResult::allowed;
+        $access = AccessResult::allowed();
         break;
       case 'update':
         $access = AccessResult::allowedIf($account->id() == $entity->getOwnerId())->cachePerUser()->addCacheableDependency($entity);
@@ -35,4 +34,4 @@ class BidAccessControlHandler extends EntityAccessControlHandler {
   }
 }
 
-?>
+

@@ -1,3 +1,0 @@
-views.filter.offer_moderation_state_filter:
-  type: views.filter.in_operator
-  label: 'Filter for moderation state'

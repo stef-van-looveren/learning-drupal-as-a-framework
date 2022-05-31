@@ -1,11 +1,3 @@
-offer.add:
-  path: '/offers/create'
-  defaults:
-    _entity_form: offer.add
-    _title: 'Add offer'
-  requirements:
-    _entity_create_access: 'offer'
-
 entity.offer.edit_form:
   path: '/offers/{offer}/edit'
   defaults:
@@ -29,6 +21,10 @@ entity.offer.canonical:
     _title: 'Offer'
   requirements:
     _entity_access: 'offer.view'
+  options:
+    parameters:
+      offer:
+        type: entity:offer
 
 entity.offer.collection:
   path: '/offers'
@@ -36,7 +32,7 @@ entity.offer.collection:
     _permission: 'administer own offers'
 
 entity.offer.settings:
-  path: 'admin/structure/offer'
+  path: '/admin/structure/offer'
   defaults:
     _form: '\Drupal\offer\Form\OfferSettingsForm'
     _title: 'Offer settings'
@@ -99,18 +95,9 @@ offer.about:
   path: '/about'
   defaults:
     _controller: '\Drupal\offer\Controller\AboutPageController::Render'
-    title: 'About us'
+    _title: 'About us'
   requirements:
     _access: 'TRUE'
 
-offer.expire:
-  path: '/offers/expire/{offer}'
-  defaults:
-    _controller: '\Drupal\offer\Controller\OfferExpiredController::Render'
-    _title_callback: 'Expire offer'
-  requirements:
-    _custom_access: '\Drupal\offer\Controller\OfferExpiredController::Access'
-  options:
-    parameters:
-      offer:
-        type: entity:offer
+
+

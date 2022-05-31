@@ -1,4 +1,4 @@
-uuid: 1aa27b94-97e8-4691-98ea-afaab96ba01e
+uuid: 2a58ddbf-b0ce-4599-9664-f64254d95fec
 langcode: en
 status: true
 dependencies:
@@ -22,12 +22,12 @@ content:
     type: options_select
     region: content
   field_price:
+    type: number
     weight: 1
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
 hidden:
   field_description: true
   field_image: true

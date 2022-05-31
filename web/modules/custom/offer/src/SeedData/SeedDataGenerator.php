@@ -45,7 +45,7 @@ Class SeedDataGenerator {
         }
         Drush::output()->writeln('<comment>Creating user test</comment>' );
         // dummy user 1
-        $profilepic = 'https://miro.medium.com/max/526/0*nnYie3yap6MX3Ods.jpg';
+        $profilepic = 'https://stefvanlooveren.me/seeds/0_nnYie3yap6MX3Ods.jpg';
         $file = system_retrieve_file($profilepic, $directory, true);
 
         $user = User::create();
@@ -60,7 +60,7 @@ Class SeedDataGenerator {
         }
         Drush::output()->writeln('<comment>Creating user Amber</comment>' );
         // dummy user 2
-        $profilepic = 'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200';
+        $profilepic = 'https://stefvanlooveren.me/seeds/205e460b479e2e5b48aec07710c08d50.png';
         $file = system_retrieve_file($profilepic, $directory, true);
         $user = User::create();
         $user->setUsername('Eric Wang');
@@ -74,7 +74,7 @@ Class SeedDataGenerator {
         }
         Drush::output()->writeln('<comment>Creating user Eric</comment>' );
         // dummy user 3
-        $profilepic = 'https://expertphotography.com/wp-content/uploads/2020/08/profile-photos-2.jpg';
+        $profilepic = 'https://stefvanlooveren.me/seeds/profile-photos-2.jpg';
         $file = system_retrieve_file($profilepic, $directory, true);
 
         $user = User::create();
@@ -144,7 +144,7 @@ Class SeedDataGenerator {
             if($bidId) {
               $bid = Bid::load($bidId);
               $bid->set('bid', 1700);
-              $bid->setNewRevision();
+              $bid->setNewRevision(TRUE);
               $bid->setRevisionLogMessage('Bid raised for offer ' . $bidListItem['offer_id']);
               $bid->setRevisionCreationTime(\Drupal::time()->getRequestTime());
               $bid->setRevisionUserId(\Drupal::currentUser()->id());
@@ -176,7 +176,7 @@ Class SeedDataGenerator {
           ',
         'field_price' => 1500,
         'field_offer_type' => 'with_minimum',
-        'field_image' => 'https://images-na.ssl-images-amazon.com/images/I/61-HR1eqFuL._AC_SL1001_.jpg',
+        'field_image' => 'https://stefvanlooveren.me/seeds/61-HR1eqFuL._AC_SL1001_.jpg',
         'moderation_state' => 'published',
         'username' => 'Amber Knight'
       ],
@@ -194,7 +194,7 @@ Class SeedDataGenerator {
           ',
         'field_price' => 0,
         'field_offer_type' => 'no_minimum',
-        'field_image' => 'https://i.etsystatic.com/25414791/r/il/cd45e0/2738953975/il_794xN.2738953975_4wer.jpg',
+        'field_image' => 'https://stefvanlooveren.me/seeds/il_794xN.2738953975_4wer.jpg',
         'moderation_state' => 'published',
         'username' => 'Eric Wang'
       ],
@@ -210,7 +210,7 @@ Class SeedDataGenerator {
           ',
         'field_price' => 440,
         'field_offer_type' => 'with_minimum',
-        'field_image' => 'https://i.etsystatic.com/9823656/r/il/fb3377/1980396897/il_794xN.1980396897_g19o.jpg',
+        'field_image' => 'https://stefvanlooveren.me/seeds/il_794xN.1980396897_g19o.jpg',
         'moderation_state' => 'published',
         'username' => 'Kim Barkeley'
       ],
@@ -221,7 +221,7 @@ Class SeedDataGenerator {
           ',
         'field_price' => 0,
         'field_offer_type' => 'no_minimum',
-        'field_image' => 'https://i.etsystatic.com/23061071/r/il/17fd03/2642593398/il_794xN.2642593398_tmbh.jpg',
+        'field_image' => 'https://stefvanlooveren.me/seeds/il_794xN.2642593398_tmbh.jpg',
         'moderation_state' => 'published',
         'username' => 'Amber Knight'
       ],
@@ -238,7 +238,7 @@ Class SeedDataGenerator {
         ',
         'field_price' => 450,
         'field_offer_type' => 'with_minimum',
-        'field_image' => 'https://www.saunakoning.nl/media/catalog/product/cache/1/thumbnail/900x900/9df78eab33525d08d6e5fb8d27136e95/2/3/230-1_1_1.png',
+        'field_image' => 'https://stefvanlooveren.me/seeds/230-1_1_1.png',
         'moderation_state' => 'published',
         'username' => 'Amber Knight'
       ],

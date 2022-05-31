@@ -1,16 +1,16 @@
 <?php
 /**
  * @file
- * Contains \Drupal\bid\Entity\Bid.
+ * Contains \Drupal\bid\Entity\bid.
  */
 
 namespace Drupal\bid\Entity;
 
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Entity\EditorialContentEntityBase;
+use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Entity\EntityTypeInterface;
-use Drupal\Core\Entity\EntityStorageInterface;
-use Drupal\Core\Cache\Cache;
 use Drupal\offer\Entity\Offer;
 
 /**
@@ -23,7 +23,7 @@ use Drupal\offer\Entity\Offer;
  *   label = @Translation("bid"),
  *   base_table = "bid",
  *   data_table = "bid_field_data",
- *   fieldable = TRUE,
+ *   fieldable = FALSE,
  *   revision_table = "bid_revision",
  *   revision_data_table = "bid_field_revision",
  *   entity_keys = {
@@ -51,7 +51,7 @@ use Drupal\offer\Entity\Offer;
  *     "revision_log_message" = "revision_log"
  *   },
  *   constraints = {
- *     "AllFieldsRequired" = {}
+ *    "AllFieldsRequired" = {}
  *   }
  * )
  */
@@ -92,30 +92,6 @@ class Bid extends EditorialContentEntityBase {
   /**
    * {@inheritdoc}
    */
-  public function postSave(EntityStorageInterface $storage, $update = TRUE) {
-    parent::postSave($storage, $update);
-    $offer = Offer::load($this->get('offer_id')->target_id);
-    Cache::invalidateTags($offer->getCacheTagsToInvalidate());
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function postDelete(EntityStorageInterface $storage, array $entities) {
-    parent::preDelete($storage, $entities);
-    // Invalidate all caches of offers whenever bids are deleted
-    foreach ($entities as $entity) {
-      $offer = Offer::load($entity->get('offer_id')->target_id);
-      if($offer) {
-        Cache::invalidateTags($offer->getCacheTagsToInvalidate());
-      }
-    }
-  }
-
-
-  /**
-   * {@inheritdoc}
-   */
   public function getOwner() {
     return $this->get('user_id')->entity;
   }
@@ -138,9 +114,9 @@ class Bid extends EditorialContentEntityBase {
       ->condition('id', $id);
     $count = $query->allRevisions()->count()->execute();
     if($count > 1) {
-      return true;
+      return TRUE;
     } else {
-      return false;
+      return FALSE;
     }
   }
 
@@ -156,4 +132,44 @@ class Bid extends EditorialContentEntityBase {
     return $revisions;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function postSave(EntityStorageInterface $storage, $update = TRUE) {
+    $this->invalidateTagsOnSave($update);
+    $offer = Offer::load($this->get('offer_id')->target_id);
+    Cache::invalidateTags($offer->getCacheTagsToInvalidate());
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function postDelete(EntityStorageInterface $storage, array $entities) {
+    static::invalidateTagsOnDelete($storage->getEntityType(), $entities);
+    // Invalidate all caches of offers whenever bids are deleted
+    foreach($entities as $entity) {
+      $offer = Offer::load($entity->get('offer_id')->target_id);
+      if($offer) {
+        Cache::invalidateTags($offer->getCacheTagsToInvalidate());
+      }
+    }
+  }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

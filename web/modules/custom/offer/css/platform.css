@@ -2,33 +2,14 @@
   width: 55%;
   float:left;
 }
-.offer-detail-page #block-bid-block {
+.offer-detail-page .offer-bid-form {
   width: 30%;
   float:right;
 }
-.offer-detail-page #block-bids, .offer-detail-page #block-biddingtableblock {
-  float:left;
-  clear:both;
-  width: 55%;
-}
-
 /** Main menu + user menu **/
-body .toolbar-meta {
-  display:none;
-}
-body .region-meta {
-  background: #0444C4;
-  width: 100%;
-  max-width: 100%;
-  margin: 0 !important;
-  display:block;
-  padding: 0;
-  height: 60px;
-}
 .navigation.menu--main ul, .navigation.menu--account ul {
   list-style:none;
   height: 50px;
-  padding: 0 20px;
 }
 .navigation.menu--account {
   float:right;
@@ -44,14 +25,13 @@ body .region-meta {
   margin: 0;
 }
 .navigation.menu--main ul li a, .navigation.menu--account ul li a {
-  color: #FBFBFF;
+  color: #0444C4;
   padding: 20px;
   text-decoration:none;
   font-size: 0.8125rem;
-  display:inline-block;
 }
 .navigation.menu--main ul li a.is-active, .navigation.menu--main ul li a:hover, .navigation.menu--account ul li a.is-active, .navigation.menu--account ul li a:hover {
-  background: #FBFBFF;
+  background: #E5EDFD;
   color:black;
 }
 /** breadcrumbs **/
@@ -65,34 +45,8 @@ body .region-meta {
   font-weight: 600;
 }
 
-.sticky-shadow {
-  display:none;
-}
-header {
-  background: #FBFBFF;
-}
-
-/** user profile compact view **/
-.profile {
-  display: flex;
-  justify-content: center;
-  margin-top: 5px;
-}
-.profile .image {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  margin: 0 auto;
-  margin-right: 15px;
-}
-.username {
-  color: #0343C3;
-  font-weight: 600;
-  display:flex;
-  flex-grow:1;
-  align-self: center;
-}
-.bid-price {
-  color: darkgreen;
-  font-weight: 600;
+/** bidding block **/
+.offer-detail-page .block-offer-bidding-table-block {
+  float: right;
+  width: 40%;
 }

@@ -6,6 +6,7 @@
 
 namespace Drupal\offer\Form;
 
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Entity\ContentEntityForm;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -16,11 +17,13 @@ use Drupal\Core\Form\FormStateInterface;
  */
 class OfferAddFormStep3 extends ContentEntityForm {
 
+  /**
+   * {@inheritdoc}
+   */
   public function buildForm(array $form, FormStateInterface $form_state) {
     /* @var $entity \Drupal\offer\Entity\Offer */
     $form = parent::buildForm($form, $form_state);
     $form['actions']['submit']['#value'] = t('Save and proceed');
-    unset($form['actions']['delete']);
 
     $form['field_price']['#states'] = [
       'visible' => [
@@ -29,14 +32,6 @@ class OfferAddFormStep3 extends ContentEntityForm {
     ];
 
     return $form;
-  }
-
-  public function save(array $form, FormStateInterface $form_state) {
-    // Redirect to offer overview after save.
-    $form_state->setRedirect('entity.offer.collection');
-    \Drupal::messenger()->addMessage('Your offer was created. Click the publish button to start earning.');
-    $entity = $this->getEntity();
-    $entity->save();
   }
 
   protected function actions(array $form, FormStateInterface $form_state) {
@@ -59,6 +54,17 @@ class OfferAddFormStep3 extends ContentEntityForm {
     $entity = $this->getEntity();
     $id = $entity->id();
     $form_state->setRedirect('offer.step2', ['offer' => $id]);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function save(array $form, FormStateInterface $form_state) {
+    // Redirect to offer overview after save
+    \Drupal::messenger()->addMessage('Your offer was created. Click the publish button to start earning!');
+    $entity = $this->getEntity();
+    $entity->save();
+    $form_state->setRedirect('entity.offer.collection');
   }
 
 }

@@ -1,4 +1,4 @@
-uuid: 39d4760c-ad35-42e5-b348-934804955400
+uuid: 5663b4d7-0239-4f08-85ba-a9c2091f5c6a
 langcode: en
 status: true
 dependencies:
@@ -17,7 +17,7 @@ type_settings:
       weight: 0
     expired:
       published: true
-      default_revision: true
+      default_revision: false
       label: Expired
       weight: 2
     published:
@@ -49,3 +49,4 @@ type_settings:
   entity_types:
     offer:
       - offer
+  default_moderation_state: draft
