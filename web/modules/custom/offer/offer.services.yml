@@ -1,0 +1,19 @@
+services:
+  offer_login.event_subscriber:
+    class: Drupal\offer\EventSubscriber\UserLoginSubscriber
+    arguments: [ '@path.matcher', '@current_user' ]
+    tags:
+      - { name: event_subscriber }
+  offer.route_subscriber:
+    class: Drupal\offer\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
+  offer_redirect_user_canonical_to_edit.response_subscriber:
+    class: Drupal\offer\EventSubscriber\RedirectProfilePageToProfileSubscriber
+    arguments: ['@current_route_match']
+    tags:
+      - { name: event_subscriber }
+  offer.commands:
+    class: \Drupal\offer\Commands\SeedGeneratorCommand
+    tags:
+      - { name: drush.command }

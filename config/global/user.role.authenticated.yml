@@ -1,0 +1,22 @@
+uuid: cfd941dc-c303-49d7-9cd7-494bdc2fa162
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access content'
+  - 'administer own offers'
+  - 'create media'
+  - 'delete media'
+  - 'update media'
+  - 'use offer_workflow transition create_new_draft'
+  - 'use offer_workflow transition expired'
+  - 'use offer_workflow transition publish'
+  - 'use text format html'
+  - 'view media'
+  - 'view own unpublished media'

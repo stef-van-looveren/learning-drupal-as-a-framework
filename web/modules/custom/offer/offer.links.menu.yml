@@ -1,0 +1,36 @@
+offer.toolbar.my_offers:
+  title: 'My offers'
+  route_name: entity.offer.collection
+  parent: system.admin
+  weight: 99
+
+offer.admin.structure.settings:
+  title: Offer settings
+  description: 'Configure Offer entity'
+  route_name:  entity.offer.settings
+  parent: system.admin_structure
+
+offer.account.my_offers:
+  route_name: entity.offer.collection
+  menu_name: main
+  class: Drupal\offer\Plugin\Menu\MyOffers
+  weight: -50
+
+offer.overview:
+  title: 'Offers'
+  route_name: view.offer_overview.page_1
+  menu_name: main
+  weight: 5
+
+offer.config:
+  title: 'Offer global settings'
+  route_name: offer.config
+  description: 'Global settings for the offer platform'
+  parent: system.admin_config_system
+  weight: 99
+
+offer.main.about:
+  title: 'About'
+  menu_name: main
+  route_name: offer.about
+  weight: 80

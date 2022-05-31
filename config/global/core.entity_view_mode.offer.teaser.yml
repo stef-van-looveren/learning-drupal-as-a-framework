@@ -1,0 +1,10 @@
+uuid: fe8d0bfe-3234-4865-9664-ab41344ce993
+langcode: en
+status: true
+dependencies:
+  module:
+    - offer
+id: offer.teaser
+label: Teaser
+targetEntityType: offer
+cache: true

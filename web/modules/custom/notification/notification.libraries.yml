@@ -1,0 +1,8 @@
+notification:
+  js:
+    js/notification.js: {}
+  dependencies:
+    - core/drupal.ajax
+    - core/jquery
+    - core/drupal
+    - views/views.ajax

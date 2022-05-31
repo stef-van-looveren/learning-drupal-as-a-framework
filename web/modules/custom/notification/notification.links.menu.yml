@@ -1,0 +1,11 @@
+#notification.main.my_notifications:
+#  title: 'Notifications'
+#  route_name: view.notifications.page_1
+#  parent: system.admin
+#  weight: 60
+
+notification.account.notifications:
+  title: 'Notifications'
+  menu_name: account
+  route_name: view.notifications.page_1
+  weight: -40

@@ -1,0 +1,9 @@
+notification.delete:
+  path: '/notification/delete/{method}/{id}'
+  defaults:
+    _controller: '\Drupal\notification\Controller\NotificationDeleteController::Render'
+    _title: 'Delete notification?'
+  requirements:
+    _access: 'TRUE'
+    id: '\d+'
+    method: 'nojs|ajax'

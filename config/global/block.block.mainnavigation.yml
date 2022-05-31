@@ -1,0 +1,25 @@
+uuid: ef8c1821-2450-418d-b433-ca2195d81b47
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - gin
+id: mainnavigation
+theme: gin
+region: breadcrumb
+weight: -4
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

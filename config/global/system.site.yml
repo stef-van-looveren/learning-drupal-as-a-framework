@@ -1,0 +1,14 @@
+uuid: 98930249-9a95-4c73-b265-00b51fe3da34
+name: testing
+mail: sas@vito.be
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /offer
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI

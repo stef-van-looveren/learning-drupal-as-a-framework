@@ -1,0 +1,29 @@
+uuid: 037beede-de94-4080-8cd8-de7d3ebfff28
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_profile_image
+  module:
+    - image
+    - user
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  field_profile_image:
+    weight: 6
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  member_for:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

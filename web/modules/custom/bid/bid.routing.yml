@@ -1,0 +1,7 @@
+entity.bid.delete_form:
+  path: '/bid/{bid}/delete'
+  defaults:
+    _entity_form: bid.delete
+    _title: 'Delete bid'
+  requirements:
+    _entity_access: 'bid.delete'

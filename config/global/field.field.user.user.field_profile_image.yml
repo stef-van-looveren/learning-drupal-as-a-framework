@@ -1,0 +1,38 @@
+uuid: fd20fc9c-63a0-4043-b6bf-46cbb1de56bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_profile_image
+  module:
+    - image
+    - user
+id: user.user.field_profile_image
+field_name: field_profile_image
+entity_type: user
+bundle: user
+label: 'Profile image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: users
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: 500x500
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: false
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

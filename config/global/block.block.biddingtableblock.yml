@@ -1,0 +1,25 @@
+uuid: 29caf1b5-15c0-468f-93ca-e335c9f945da
+langcode: en
+status: true
+dependencies:
+  module:
+    - offer
+    - system
+  theme:
+    - gin
+id: biddingtableblock
+theme: gin
+region: content
+weight: -2
+provider: null
+plugin: offer_bidding_table_block
+settings:
+  id: offer_bidding_table_block
+  label: 'Current bids'
+  provider: offer
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '/offer/*'
+    negate: false
