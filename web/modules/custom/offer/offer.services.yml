@@ -11,3 +11,8 @@ services:
     class: Drupal\offer\Routing\RouteSubscriber
     tags:
       - { name: event_subscriber }
+  offer_redirect_user_canonical_to_edit.response_subscriber:
+    class: Drupal\offer\EventSubscriber\RedirectProfilePageToProfileSubscriber
+    arguments: ['@current_route_match']
+    tags:
+      - { name: event_subscriber }

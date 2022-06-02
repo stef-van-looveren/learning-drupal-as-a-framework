@@ -46,7 +46,7 @@ Class SeedDataGenerator {
         Drush::output()->writeln('<comment>Creating user test</comment>' );
         // dummy user 1
         $profilepic = 'https://stefvanlooveren.me/seeds/0_nnYie3yap6MX3Ods.jpg';
-        $file = system_retrieve_file($profilepic, $directory, true);
+        $file = system_retrieve_file($profilepic, $directory . rand() . '.jpg', true);
 
         $user = User::create();
         $user->setUsername('Amber Knight');
@@ -61,7 +61,7 @@ Class SeedDataGenerator {
         Drush::output()->writeln('<comment>Creating user Amber</comment>' );
         // dummy user 2
         $profilepic = 'https://stefvanlooveren.me/seeds/205e460b479e2e5b48aec07710c08d50.png';
-        $file = system_retrieve_file($profilepic, $directory, true);
+        $file = system_retrieve_file($profilepic, $directory . rand() . '.jpg', true);
         $user = User::create();
         $user->setUsername('Eric Wang');
         $user->setPassword('test');
@@ -75,7 +75,7 @@ Class SeedDataGenerator {
         Drush::output()->writeln('<comment>Creating user Eric</comment>' );
         // dummy user 3
         $profilepic = 'https://stefvanlooveren.me/seeds/profile-photos-2.jpg';
-        $file = system_retrieve_file($profilepic, $directory, true);
+        $file = system_retrieve_file($profilepic, $directory . rand() . '.jpg', true);
 
         $user = User::create();
         $user->setUsername('Kim Barkeley');
@@ -101,7 +101,7 @@ Class SeedDataGenerator {
           $offer->set('field_price', $offerListItem['field_price']);
           $directory = 'public://';
           $url = $offerListItem['field_image'];
-          $file = system_retrieve_file($url, $directory, true);
+          $file = system_retrieve_file($url, $directory . rand() . '.jpg', true);
           $drupalMedia = Media::create([
             'bundle' => 'image',
             'uid' => '0',

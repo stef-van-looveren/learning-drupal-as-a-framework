@@ -50,3 +50,24 @@
   float: right;
   width: 40%;
 }
+
+/** user profile compact view **/
+.profile {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+.profile .image {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-right: 15px;
+}
+.username {
+  color: #0343C3;
+  font-weight: 600;
+  display:flex;
+  flex-grow:1;
+  align-self: center;
+}
