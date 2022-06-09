@@ -1,8 +1,8 @@
 ## Learning Drupal as a framework
 <div id="top"></div>
 
-[![udemy][udemy-shield]][udemy-url]
 [![leanpub][leanpub-shield]][leanpub-url]
+[![udemy][udemy-shield]][udemy-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 [![twitter][twitter-shield]][twitter-url]
 
