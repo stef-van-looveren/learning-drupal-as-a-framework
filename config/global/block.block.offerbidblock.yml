@@ -16,13 +16,13 @@ plugin: offer_bidding_block
 settings:
   id: offer_bidding_block
   label: 'Offer bid block'
-  provider: offer
   label_display: '0'
+  provider: offer
 visibility:
   user_role:
     id: user_role
-    roles:
-      authenticated: authenticated
     negate: false
     context_mapping:
       user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated

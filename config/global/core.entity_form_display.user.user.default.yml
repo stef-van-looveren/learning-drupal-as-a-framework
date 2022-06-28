@@ -19,13 +19,13 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_profile_image:
+    type: image_image
     weight: 7
+    region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-    type: image_image
-    region: content
   language:
     weight: 0
     region: content

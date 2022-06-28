@@ -16,11 +16,11 @@ bundle: offer
 mode: step_3
 content:
   field_offer_type:
+    type: options_select
     weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   field_price:
     type: number
     weight: 1

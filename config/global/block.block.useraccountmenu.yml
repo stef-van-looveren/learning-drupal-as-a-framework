@@ -11,14 +11,14 @@ dependencies:
 id: useraccountmenu
 theme: gin
 region: breadcrumb
-weight: -3
+weight: -5
 provider: null
 plugin: 'system_menu_block:account'
 settings:
   id: 'system_menu_block:account'
   label: 'User account menu'
-  provider: system
   label_display: '0'
+  provider: system
   level: 1
   depth: 0
   expand_all_items: false

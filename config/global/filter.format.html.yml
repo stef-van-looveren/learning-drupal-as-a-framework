@@ -7,13 +7,4 @@ dependencies:
 name: html
 format: html
 weight: 0
-filters:
-  media_embed:
-    id: media_embed
-    provider: media
-    status: false
-    weight: 100
-    settings:
-      default_view_mode: default
-      allowed_media_types: {  }
-      allowed_view_modes: {  }
+filters: {  }

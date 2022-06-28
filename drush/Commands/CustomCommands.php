@@ -19,7 +19,7 @@ class CustomCommands extends DrushCommands {
     $staticUuidIsSet = \Drupal::state()->get('static_uuid_is_set');
     if(!$staticUuidIsSet) {
       $config_factory = \Drupal::configFactory();
-      $config_factory->getEditable('system.site')->set('uuid', '98930249-9a95-4c73-b265-00b51fe3da34')->save();
+      $config_factory->getEditable('system.site')->set('uuid', '66b5bd11-f345-42e4-8a9c-fc2a7b11764b')->save();
       Drush::output()->writeln('Setting the correct UUID for this project: done.');
       \Drupal::state()->set('static_uuid_is_set', 1);
     }

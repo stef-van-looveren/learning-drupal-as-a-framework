@@ -1,0 +1,6 @@
+name: learning-drupal-as-a-framework
+recipe: drupal9
+config:
+  webroot: web
+  php: '7.4'
+  composer: '2'

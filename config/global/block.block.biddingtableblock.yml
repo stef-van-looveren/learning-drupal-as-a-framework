@@ -17,17 +17,17 @@ plugin: offer_bidding_table_block
 settings:
   id: offer_bidding_table_block
   label: 'Bidding table block'
-  provider: offer
   label_display: '0'
+  provider: offer
 visibility:
   request_path:
     id: request_path
-    pages: '/offer/*'
     negate: false
+    pages: '/offer/*'
   user_role:
     id: user_role
-    roles:
-      authenticated: authenticated
     negate: false
     context_mapping:
       user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated
