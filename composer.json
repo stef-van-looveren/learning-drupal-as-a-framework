@@ -17,12 +17,12 @@
     ],
     "require": {
         "php": ">=7.4",
-        "composer/installers": "^1.9",
+        "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
-        "drupal/core-composer-scaffold": "^9.0",
-        "drupal/core-recommended": "^9.0",
-        "drupal/devel": "^4.1",
-        "drupal/gin": "^3.0@alpha",
+        "drupal/core-composer-scaffold": "^9.0.0",
+        "drupal/core-recommended": "^9.0.0",
+        "drupal/devel": "^4.1.0",
+        "drupal/gin": "^3.0-beta5",
         "drush/drush": "^10.3",
         "vlucas/phpdotenv": "^5.1",
         "webflo/drupal-finder": "^1.2"
@@ -41,6 +41,13 @@
         "sort-packages": true,
         "platform": {
             "php": "7.4"
+        },
+        "allow-plugins": {
+            "composer/installers": true,
+            "cweagans/composer-patches": true,
+            "drupal/core-composer-scaffold": true,
+            "zaporylie/composer-drupal-optimizations": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
         }
     },
     "extra": {

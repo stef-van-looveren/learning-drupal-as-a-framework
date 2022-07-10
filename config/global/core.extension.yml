@@ -29,7 +29,7 @@ module:
   webprofiler: 0
   workflows: 0
   views: 10
-  minimal: 1000
+  mysql: 0
 theme:
   stark: 0
   claro: 0
