@@ -52,7 +52,7 @@ The following steps are needed to set up the platform:
 - [x] Code updated for Drupal 9.3
 - [x] Review of chapter 3, 4 and 5 was done
 - [x] Video course of chapter 3 [available on Udemy](https://www.udemy.com/course/drupal-9-module-development-introduction-to-custom-entities/?referralCode=1C71EE042C3332B885BA)
-- [x] Video course of chapters 3 and 4 "Advanced Drupal development" [available on Udemy](https://www.udemy.com/course/drupal-advanced-module-development-guide/?referralCode=DC8449A4E64CBA91B6C5)
+- [x] Video course of chapters 4 and 5 "Advanced Drupal development" [available on Udemy](https://www.udemy.com/course/drupal-advanced-module-development-guide/?referralCode=DC8449A4E64CBA91B6C5)
 - [ ] Review of chapter 1
 
 <!-- LICENSE -->
