@@ -1,6 +1,5 @@
 ## Learning Drupal as a framework
 <div id="top"></div>
-[![amazon][amazon-shield]][amazon-url]
 [![leanpub][leanpub-shield]][leanpub-url]
 [![udemy][udemy-shield]][udemy-url]
 [![udemy2][udemy2-shield]][udemy2-url]
