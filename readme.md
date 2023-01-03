@@ -1,5 +1,6 @@
 ## Learning Drupal as a framework
 <div id="top"></div>
+
 [![amazon][amazon-shield]][amazon-url]
 [![leanpub][leanpub-shield]][leanpub-url]
 [![udemy][udemy-shield]][udemy-url]
@@ -71,12 +72,14 @@ Website: [https://stefvanlooveren.me](https://stefvanlooveren.me)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
+[amazon-shield]: https://img.shields.io/badge/Amazon-FF9900.svg?style=for-the-badge&logo=Amazon&logoColor=white
+[amazon-url]: https://a.co/d/4mYJZzl
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/stef-van-looveren-06601a26
 [product-screenshot]: https://stefvanlooveren.me/modules/custom/stef/images/banner1.jpg
-[udemy-shield]: https://img.shields.io/static/v1?style=for-the-badge&message=Chapter%202%20video%20course&color=18EAAE&logoColor=FFFFFF&label=
+[udemy-shield]: https://img.shields.io/static/v1?style=for-the-badge&message=Chapter%202&color=A435F0&logoColor=FFFFFF&label=
 [udemy-url]: https://stefvanlooveren.teachable.com/p/drupal-8-9-10-module-development-start-with-custom-entities
-[udemy2-shield]: https://img.shields.io/static/v1?style=for-the-badge&message=Chapter%204+5%20video%20course&color=18EAAE&logoColor=FFFFFF&label=
+[udemy2-shield]: https://img.shields.io/static/v1?style=for-the-badge&message=Chapter%204+5&color=A435F0&logoColor=FFFFFF&label=
 [udemy2-url]: https://stefvanlooveren.teachable.com/p/drupal-8-9-10-advanced-module-development-guide
 [leanpub-shield]: https://img.shields.io/static/v1?style=for-the-badge&message=Leanpub&color=222222&logo=Leanpub&logoColor=FFFFFF&label=
 [leanpub-url]: https://leanpub.com/drupal-9/
