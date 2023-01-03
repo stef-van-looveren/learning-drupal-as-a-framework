@@ -1,5 +1,6 @@
 ## Learning Drupal as a framework
 <div id="top"></div>
+[![amazon][amazon-shield]][amazon-url]
 [![leanpub][leanpub-shield]][leanpub-url]
 [![udemy][udemy-shield]][udemy-url]
 [![udemy2][udemy2-shield]][udemy2-url]
@@ -70,8 +71,6 @@ Website: [https://stefvanlooveren.me](https://stefvanlooveren.me)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[amazon-shield]: https://img.shields.io/badge/AmazonPay-ff9900.svg?style=for-the-badge&logo=Amazon-Pay&logoColor=white
-[amazon-url]: https://www.amazon.com/Learning-Drupal-framework-custom-included-ebook/dp/B0B6YBS29R
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/stef-van-looveren-06601a26
 [product-screenshot]: https://stefvanlooveren.me/modules/custom/stef/images/banner1.jpg
