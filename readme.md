@@ -72,7 +72,7 @@ Website: [https://stefvanlooveren.me](https://stefvanlooveren.me)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [amazon-shield]: https://img.shields.io/badge/AmazonPay-ff9900.svg?style=for-the-badge&logo=Amazon-Pay&logoColor=white
-[amazon-url]: https://www.amazon.com/Learning-Drupal-framework-custom-included-ebook/dp/B0B6YBS29R/ref=sr_1_3?crid=2CUITRODIAZHO&keywords=learning+drupal+9&qid=1658486944&s=books&sprefix=learning+drupal+9%2Cstripbooks-intl-ship%2C274&sr=1-3
+[amazon-url]: https://www.amazon.com/Learning-Drupal-framework-custom-included-ebook/dp/B0B6YBS29R
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/stef-van-looveren-06601a26
 [product-screenshot]: https://stefvanlooveren.me/modules/custom/stef/images/banner1.jpg
