@@ -51,8 +51,8 @@ The following steps are needed to set up the platform:
 ## Roadmap
 - [x] Code updated for Drupal 9.3
 - [x] Review of chapter 3, 4 and 5 was done
-- [x] Video course of chapter 3 [available on Udemy](https://www.udemy.com/course/drupal-9-module-development-introduction-to-custom-entities/?referralCode=1C71EE042C3332B885BA)
-- [x] Video course of chapters 4 and 5 "Advanced Drupal development" [available on Udemy](https://www.udemy.com/course/drupal-advanced-module-development-guide/?referralCode=DC8449A4E64CBA91B6C5)
+- [x] Video course of chapter 3 [available on Teachable](https://stefvanlooveren.teachable.com/p/drupal-8-9-10-module-development-start-with-custom-entities)
+- [x] Video course of chapters 4 and 5 "Advanced Drupal development" [available on Teachable](https://stefvanlooveren.teachable.com/p/drupal-8-9-10-advanced-module-development-guide)
 - [ ] Review of chapter 1
 
 <!-- LICENSE -->
@@ -74,10 +74,10 @@ Website: [https://stefvanlooveren.me](https://stefvanlooveren.me)
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/stef-van-looveren-06601a26
 [product-screenshot]: https://stefvanlooveren.me/modules/custom/stef/images/banner1.jpg
-[udemy-shield]: https://img.shields.io/static/v1?style=for-the-badge&message=Chapter%202&color=A435F0&logo=Udemy&logoColor=FFFFFF&label=
-[udemy-url]: https://www.udemy.com/course/drupal-9-module-development-introduction-to-custom-entities/?referralCode=1C71EE042C3332B885BA
-[udemy2-shield]: https://img.shields.io/static/v1?style=for-the-badge&message=Chapter%204+5&color=A435F0&logo=Udemy&logoColor=FFFFFF&label=
-[udemy2-url]: https://www.udemy.com/course/drupal-9-module-development-introduction-to-custom-entities/?referralCode=1C71EE042C3332B885BA
+[udemy-shield]: https://img.shields.io/static/v1?style=for-the-badge&message=Chapter%202&color=A435F0&logoColor=FFFFFF&label=
+[udemy-url]: https://stefvanlooveren.teachable.com/p/drupal-8-9-10-module-development-start-with-custom-entities
+[udemy2-shield]: https://img.shields.io/static/v1?style=for-the-badge&message=Chapter%204+5&color=A435F0&logoColor=FFFFFF&label=
+[udemy2-url]: https://stefvanlooveren.teachable.com/p/drupal-8-9-10-advanced-module-development-guide
 [leanpub-shield]: https://img.shields.io/static/v1?style=for-the-badge&message=Leanpub&color=222222&logo=Leanpub&logoColor=FFFFFF&label=
 [leanpub-url]: https://leanpub.com/drupal-9/
 [twitter-shield]: https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white
