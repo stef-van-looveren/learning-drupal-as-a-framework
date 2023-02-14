@@ -1,4 +1,4 @@
-## Aprendiendo Drupal como un framework
+## Learning Drupal as a framework
 <div id="top"></div>
 
 [![amazon][amazon-shield]][amazon-url]
@@ -15,58 +15,58 @@
   <a href="https://github.com/github_username/repo_name">
     <img src="https://d2sofvawe08yqg.cloudfront.net/drupal-9/s_featured?1620669508" alt="Logo" width="182" height="284">
   </a>
-<h4>Su guía para personalizar el Drupal 8, 9 y 10</h4>
-<blockquote align="center">maravilloso, completamente explicado y elaborado pedagógicamente con cuidado. ¡Gran libro! - Camillos Figuera</blockquote>
-<blockquote align="center">¡Muy buen curso y espero ver más cursos de Drupal como este! - Hesham Khwaja</blockquote>
-<blockquote align="center">Esto era lo que he estado buscando durante mucho tiempo. Bien explicado y documentado. ¡Gracias! Esto me ayudó mucho a entender las entidades - Wouter Gevaert</blockquote>
+<h4>Your guide to custom Drupal 8, 9 &  10</h4>
+<blockquote align="center">wonderful, throughfull explained and pedagogically crafted with care. Great book! - Camillos Figuera</blockquote>
+<blockquote align="center">Very good course and I hope see more Drupal courses like this! - Hesham Khwaja</blockquote>
+<blockquote align="center">This was what I've been looking for for a long time. Well explained and documented. Thanks! This helped me a lot to understand entities - Wouter Gevaert</blockquote>
 
 </div>
 
 <!-- GETTING STARTED -->
-## Primeros pasos
+## Getting Started
 
-Primero, configure una nueva instalación de Drupal 9
+First, set up a fresh Drupal 9 installation
 
-### Instalación
+### Installation
 
-Se necesitan los siguientes pasos para configurar la plataforma:
+The following steps are needed to set up the platform:
 
-1. Pegue los archivos del proyecto en un directorio. Asegúrese de que la carpeta web y drush estén en la raíz del proyecto.
+1. Paste the project files into a directory. Make sure the web and drush folder are in the root of the project.
 
-2. Asegúrese de que su dominio local apunte a la carpeta web
+2. Make sure your local domain is pointed to the web folder
 
-3. Ejecute ```composer install``` en la raíz de su instalación. Esto descargará todos los paquetes necesarios para la plataforma y agregará la estructura del mapa de archivos.
+3. Run ```composer install``` in the root of your installation. This will download all the required packages for the platform, and add the map structure.
 
-4. En su settings.php, como se lee en el capítulo de administración de configuración, en la parte inferior agregue ```$settings['config_sync_directory'] = '../config/global';```
+4. In your settings.php, as read in the configuration management chapter, at the bottom add ```$settings['config_sync_directory'] = '../config/global';```
 
-5. Complete las credenciales de su base de datos a través de la interfaz de usuario e instale su sitio Drupal. Elija "usar configuración existente"
+5. Fill in your database credentials via the UI and install your drupal site. Choose "use existing configuration"
 <img src="https://stefvanlooveren.me/modules/custom/stef/images/screen.PNG" />
 
-6. Espere a que finalice la instalación.
+6. Wait for the installation to finish.
 
-7. Ejecute ```drush offer-create-seeds```` para importar todo su contenido ficticio
+7. Run ```drush offer-create-seeds``` to import all of your dummy content
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- ROADMAP -->
-## Hoja de ruta
-- [x] Código actualizado para Drupal 9.3
-- [x] Se realizó la revisión de los capítulos 3, 4 y 5
-- [x] Video curso del capítulo 3 [disponible en Teachable](https://stefvanlooveren.teachable.com/p/drupal-8-9-10-module-development-start-with-custom-entities)
-- [x] Video curso de los capítulos 4 y 5 "Advanced Drupal development" [disponible en Teachable](https://stefvanlooveren.teachable.com/p/drupal-8-9-10-advanced-module-development-guide)
-- [ ] Revisión del capítulo 1
+## Roadmap
+- [x] Code updated for Drupal 9.3
+- [x] Review of chapter 3, 4 and 5 was done
+- [x] Video course of chapter 3 [available on Teachable](https://stefvanlooveren.teachable.com/p/drupal-8-9-10-module-development-start-with-custom-entities)
+- [x] Video course of chapters 4 and 5 "Advanced Drupal development" [available on Teachable](https://stefvanlooveren.teachable.com/p/drupal-8-9-10-advanced-module-development-guide)
+- [ ] Review of chapter 1
 
 <!-- LICENSE -->
-## Licencia
+## License
 
-Distribuido bajo la licencia MIT. Consulte `LICENSE.txt` para obtener más información.
+Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- CONTACT -->
-## Póngase en contacto
+## Contact
 
 Stef Van Looveren - Twitter: [@stefvanlooveren](https://twitter.com/stefvanlooveren)
 
-Sitio web: [https://stefvanlooveren.me](https://stefvanlooveren.me)
+Website: [https://stefvanlooveren.me](https://stefvanlooveren.me)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
