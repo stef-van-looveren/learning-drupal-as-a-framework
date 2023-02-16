@@ -3,6 +3,8 @@
 
 [![amazon][amazon-shield]][amazon-url]
 [![leanpub][leanpub-shield]][leanpub-url]
+[![leanpub][leanpub-shield-pt]][leanpub-url-pt]
+[![leanpub][leanpub-shield-es]][leanpub-url-es]
 [![udemy][udemy-shield]][udemy-url]
 [![udemy2][udemy2-shield]][udemy2-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
@@ -83,5 +85,9 @@ Website: [https://stefvanlooveren.me](https://stefvanlooveren.me)
 [udemy2-url]: https://stefvanlooveren.teachable.com/p/drupal-8-9-10-advanced-module-development-guide
 [leanpub-shield]: https://img.shields.io/static/v1?style=for-the-badge&message=Leanpub&color=222222&logo=Leanpub&logoColor=FFFFFF&label=
 [leanpub-url]: https://leanpub.com/drupal-9/
+[leanpub-shield-pt]: https://img.shields.io/static/v1?style=for-the-badge&message=Portuguese&color=222222&logo=Leanpub&logoColor=FFFFFF&label=
+[leanpub-url-pt]: https://leanpub.com/aprendendo-drupal-como-um-framework
+[leanpub-shield-es]: https://img.shields.io/static/v1?style=for-the-badge&message=Spanish&color=222222&logo=Leanpub&logoColor=FFFFFF&label=
+[leanpub-url-es]: https://leanpub.com/aprendiendodrupal9comoframework
 [twitter-shield]: https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white
 [twitter-url]: https://twitter.com/stefvanlooveren
