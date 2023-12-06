@@ -39,7 +39,7 @@ The following steps are needed to set up the platform:
 
 3. Run ```composer install``` in the root of your installation. This will download all the required packages for the platform, and add the map structure.
 
-4. In your settings.php, as read in the configuration management chapter, at the bottom add ```$settings['config_sync_directory'] = '../config/global';```
+4. <strong>Important!</strong> In your settings.php, as read in the configuration management chapter, at the bottom add ```$settings['config_sync_directory'] = '../config/global';```
 
 5. Fill in your database credentials via the UI and install your drupal site. Choose "use existing configuration"
 <img src="https://stefvanlooveren.me/modules/custom/stef/images/screen.PNG" />
