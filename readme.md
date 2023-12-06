@@ -7,6 +7,7 @@
 [![leanpub][leanpub-shield-es]][leanpub-url-es]
 [![udemy][udemy-shield]][udemy-url]
 [![udemy2][udemy2-shield]][udemy2-url]
+[![udemy3][udemy3-shield]][udemy3-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 [![twitter][twitter-shield]][twitter-url]
 
@@ -54,10 +55,9 @@ The following steps are needed to set up the platform:
 ## Roadmap
 - [x] Code updated for Drupal 9.5
 - [x] Review of all chapters was done
-- [x] Video course of chapter 2 "Drupal developer essentials" [[available on Udemy](https://www.Udemy.com/course/drupal-9-module-development-introduction-to-custom-entities/?referralCode=1C71EE042C3332B885BA]]
+- [x] Video course of chapter 2 "Drupal developer essentials" [[available on Udemy](https://www.udemy.com/course/drupal-developer-essentials/?referralCode=6F987BF65CE0B8712455)]
 - [x] Video course of chapter 3 "Start with custom entities" [[available on Udemy](https://www.Udemy.com/course/drupal-9-module-development-introduction-to-custom-entities/?referralCode=1C71EE042C3332B885BA)]
-- [x] Video course of chapters 4 and 5 "Advanced Drupal development" [[available on Udemy](https://www.Udemy.com/course/drupal-advanced-module-development-guide/?referralCode=DC8449A4E64CBA91B6C5))]
-
+- [x] Video course of chapters 4 and 5 "Advanced Drupal development" [[available on Udemy](https://www.Udemy.com/course/drupal-advanced-module-development-guide/?referralCode=DC8449A4E64CBA91B6C5)]
 
 <!-- LICENSE -->
 ## License
