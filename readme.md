@@ -5,9 +5,9 @@
 [![leanpub][leanpub-shield]][leanpub-url]
 [![leanpub][leanpub-shield-pt]][leanpub-url-pt]
 [![leanpub][leanpub-shield-es]][leanpub-url-es]
+[![udemy3][udemy3-shield]][udemy3-url]
 [![udemy][udemy-shield]][udemy-url]
 [![udemy2][udemy2-shield]][udemy2-url]
-[![udemy3][udemy3-shield]][udemy3-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 [![twitter][twitter-shield]][twitter-url]
 
@@ -83,7 +83,7 @@ Website: [https://stefvanlooveren.me](https://stefvanlooveren.me)
 [udemy-url]: https://www.Udemy.com/course/drupal-9-module-development-introduction-to-custom-entities/?referralCode=1C71EE042C3332B885BA
 [udemy2-shield]: https://img.shields.io/static/v1?style=for-the-badge&message=Chapter%204+5%20video%20course&color=A435F0&logoColor=FFFFFF&label=
 [udemy2-url]: https://www.Udemy.com/course/drupal-advanced-module-development-guide/?referralCode=DC8449A4E64CBA91B6C5
-[udemy3-shield]: https://img.shields.io/static/v1?style=for-the-badge&message=Chapter%204+5%20video%20course&color=A435F0&logoColor=FFFFFF&label=
+[udemy3-shield]: https://img.shields.io/static/v1?style=for-the-badge&message=Chapter%202%20video%20course&color=A435F0&logoColor=FFFFFF&label=
 [udemy3-url]: https://www.udemy.com/course/drupal-developer-essentials/?referralCode=6F987BF65CE0B8712455
 [leanpub-shield]: https://img.shields.io/static/v1?style=for-the-badge&message=Leanpub&color=222222&logo=Leanpub&logoColor=FFFFFF&label=
 [leanpub-url]: https://leanpub.com/drupal-9/
