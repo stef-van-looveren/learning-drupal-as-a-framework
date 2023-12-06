@@ -27,7 +27,7 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-First, set up a fresh Drupal 9 installation
+First, set up a fresh Drupal 9 installation. <strong>Currently, the code is tested against the latest D9 (9.5). Please be a bit patient, I'm planning to port to D10 quickly :).</strong>
 
 ### Installation
 
