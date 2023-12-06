@@ -11,7 +11,6 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
 [![twitter][twitter-shield]][twitter-url]
 
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
