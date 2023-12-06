@@ -52,11 +52,12 @@ The following steps are needed to set up the platform:
 
 <!-- ROADMAP -->
 ## Roadmap
-- [x] Code updated for Drupal 9.3
-- [x] Review of chapter 3, 4 and 5 was done
-- [x] Video course of chapter 3 [available on Teachable](https://stefvanlooveren.teachable.com/p/drupal-8-9-10-module-development-start-with-custom-entities)
-- [x] Video course of chapters 4 and 5 "Advanced Drupal development" [available on Teachable](https://stefvanlooveren.teachable.com/p/drupal-8-9-10-advanced-module-development-guide)
-- [ ] Review of chapter 1
+- [x] Code updated for Drupal 9.5
+- [x] Review of all chapters was done
+- [x] Video course of chapter 2 "Drupal developer essentials" [[available on Udemy]([https://stefvanlooveren.Udemy.com/p/drupal-8-9-10-module-development-start-with-custom-entities](https://www.Udemy.com/course/drupal-developer-essentials/?referralCode=6F987BF65CE0B8712455)](https://www.Udemy.com/course/drupal-9-module-development-introduction-to-custom-entities/?referralCode=1C71EE042C3332B885BA))
+- [x] Video course of chapter 3 "Start with custom entities" [[available on Udemy](https://stefvanlooveren.Udemy.com/p/drupal-8-9-10-module-development-start-with-custom-entities](https://www.Udemy.com/course/drupal-9-module-development-introduction-to-custom-entities/?referralCode=1C71EE042C3332B885BA))
+- [x] Video course of chapters 4 and 5 "Advanced Drupal development" [[available on Udemy](https://stefvanlooveren.Udemy.com/p/drupal-8-9-10-advanced-module-development-guide](https://www.Udemy.com/course/drupal-advanced-module-development-guide/?referralCode=DC8449A4E64CBA91B6C5))
+
 
 <!-- LICENSE -->
 ## License
