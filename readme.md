@@ -54,9 +54,9 @@ The following steps are needed to set up the platform:
 ## Roadmap
 - [x] Code updated for Drupal 9.5
 - [x] Review of all chapters was done
-- [x] Video course of chapter 2 "Drupal developer essentials" [[available on Udemy]([[https://stefvanlooveren.Udemy.com/p/drupal-8-9-10-module-development-start-with-custom-entities](https://www.udemy.com/course/drupal-developer-essentials/?referralCode=6F987BF65CE0B8712455)](https://www.Udemy.com/course/drupal-developer-essentials)]([https://www.Udemy.com/course/drupal-9-module-development-introduction-to-custom-entities/?referralCode=1C71EE042C3332B885BA](https://www.udemy.com/course/drupal-developer-essentials/?referralCode=6F987BF65CE0B8712455))]
-- [x] Video course of chapter 3 "Start with custom entities" [[available on Udemy](https://stefvanlooveren.Udemy.com/p/drupal-8-9-10-module-development-start-with-custom-entities](https://www.Udemy.com/course/drupal-9-module-development-introduction-to-custom-entities/?referralCode=1C71EE042C3332B885BA))]
-- [x] Video course of chapters 4 and 5 "Advanced Drupal development" [[available on Udemy](https://stefvanlooveren.Udemy.com/p/drupal-8-9-10-advanced-module-development-guide](https://www.Udemy.com/course/drupal-advanced-module-development-guide/?referralCode=DC8449A4E64CBA91B6C5))]
+- [x] Video course of chapter 2 "Drupal developer essentials" [[available on Udemy](https://www.Udemy.com/course/drupal-9-module-development-introduction-to-custom-entities/?referralCode=1C71EE042C3332B885BA]]
+- [x] Video course of chapter 3 "Start with custom entities" [[available on Udemy](https://www.Udemy.com/course/drupal-9-module-development-introduction-to-custom-entities/?referralCode=1C71EE042C3332B885BA)]
+- [x] Video course of chapters 4 and 5 "Advanced Drupal development" [[available on Udemy](https://www.Udemy.com/course/drupal-advanced-module-development-guide/?referralCode=DC8449A4E64CBA91B6C5))]
 
 
 <!-- LICENSE -->
@@ -81,9 +81,9 @@ Website: [https://stefvanlooveren.me](https://stefvanlooveren.me)
 [linkedin-url]: https://linkedin.com/stef-van-looveren-06601a26
 [product-screenshot]: https://stefvanlooveren.me/modules/custom/stef/images/banner1.jpg
 [udemy-shield]: https://img.shields.io/static/v1?style=for-the-badge&message=Chapter%202%20video%20course&color=A435F0&logoColor=FFFFFF&label=
-[udemy-url]: https://stefvanlooveren.teachable.com/p/drupal-8-9-10-module-development-start-with-custom-entities
+[udemy-url]: https://www.Udemy.com/course/drupal-9-module-development-introduction-to-custom-entities/?referralCode=1C71EE042C3332B885BA
 [udemy2-shield]: https://img.shields.io/static/v1?style=for-the-badge&message=Chapter%204+5%20video%20course&color=A435F0&logoColor=FFFFFF&label=
-[udemy2-url]: https://stefvanlooveren.teachable.com/p/drupal-8-9-10-advanced-module-development-guide
+[udemy2-url]: https://www.Udemy.com/course/drupal-advanced-module-development-guide/?referralCode=DC8449A4E64CBA91B6C5
 [udemy3-shield]: https://img.shields.io/static/v1?style=for-the-badge&message=Chapter%204+5%20video%20course&color=A435F0&logoColor=FFFFFF&label=
 [udemy3-url]: https://www.udemy.com/course/drupal-developer-essentials/?referralCode=6F987BF65CE0B8712455
 [leanpub-shield]: https://img.shields.io/static/v1?style=for-the-badge&message=Leanpub&color=222222&logo=Leanpub&logoColor=FFFFFF&label=
