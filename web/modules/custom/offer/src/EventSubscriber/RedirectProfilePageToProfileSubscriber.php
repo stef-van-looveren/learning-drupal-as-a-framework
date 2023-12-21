@@ -3,10 +3,10 @@
 namespace Drupal\offer\EventSubscriber;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\EventDispatcher\Event;
-use Drupal\Core\Routing\CurrentRouteMatch;
+use Symfony\Contracts\EventDispatcher\Event;
 use Drupal\Core\Url;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\Core\Routing\CurrentRouteMatch;
 
 /**
  * Class ResponseSubscriber.

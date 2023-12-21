@@ -1,7 +1,16 @@
 uuid: b4b823c1-71a0-4a5b-b668-acfada97ae16
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.html
+    - media.type.image
+  module:
+    - file
+    - filter
+    - media
+    - offer
+    - system
 _core:
   default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
 id: authenticated
@@ -14,6 +23,7 @@ permissions:
   - 'create image media'
   - 'create media'
   - 'delete media'
+  - 'delete own files'
   - 'delete own image media'
   - 'edit own image media'
   - 'update media'

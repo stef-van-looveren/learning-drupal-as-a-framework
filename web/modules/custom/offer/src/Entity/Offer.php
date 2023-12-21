@@ -164,6 +164,7 @@ class Offer extends EditorialContentEntityBase {
   public function deleteAllLinkedbids($delete = FALSE) {
     $id = $this->id();
     $query = \Drupal::entityQuery('bid')
+      ->accessCheck(TRUE)
       ->condition('offer_id', $id);
     $bidIds = $query->execute();
     foreach($bidIds as $id) {
@@ -180,6 +181,7 @@ class Offer extends EditorialContentEntityBase {
     $id = $this->id();
 
     $query = \Drupal::entityQuery('notification')
+      ->accessCheck(TRUE)
       ->condition('offer_id', $id);
     $notificationIds = $query->execute();
     foreach($notificationIds as $id) {
@@ -243,6 +245,7 @@ class Offer extends EditorialContentEntityBase {
     $bids = [];
     $id = $this->id();
     $query = \Drupal::entityQuery('bid')
+      ->accessCheck(TRUE)
       ->condition('offer_id', $id)
       ->sort('bid', 'ASC')
       ->range(NULL, 1);
@@ -264,6 +267,7 @@ class Offer extends EditorialContentEntityBase {
     $bids = [];
     $id = $this->id();
     $query = \Drupal::entityQuery('bid')
+      ->accessCheck(TRUE)
       ->condition('offer_id', $id)
       ->sort('bid', 'DESC');
     $bidIds = $query->execute();
@@ -366,6 +370,7 @@ class Offer extends EditorialContentEntityBase {
     $user_id = \Drupal::currentUser()->id();
     $id = $this->id();
     $query = \Drupal::entityQuery('bid')
+      ->accessCheck(TRUE)
       ->condition('offer_id',$id)
       ->condition('user_id', $user_id);
     $count = $query->count()->execute();
@@ -385,6 +390,7 @@ class Offer extends EditorialContentEntityBase {
     $user_id = \Drupal::currentUser()->id();
     $id = $this->id();
     $query = \Drupal::entityQuery('bid')
+      ->accessCheck(TRUE)
       ->condition('offer_id', $id)
       ->condition('user_id', $user_id);
     $result = $query->execute();

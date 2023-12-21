@@ -6,5 +6,6 @@ dependencies:
     - offer
 id: offer.step_2
 label: 'Step 2'
+description: ''
 targetEntityType: offer
 cache: true

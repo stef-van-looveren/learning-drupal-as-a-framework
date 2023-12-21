@@ -6,5 +6,6 @@ dependencies:
     - offer
 id: offer.teaser
 label: teaser
+description: ''
 targetEntityType: offer
 cache: true

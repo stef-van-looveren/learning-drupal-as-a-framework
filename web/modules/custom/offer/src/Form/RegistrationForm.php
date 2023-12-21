@@ -100,6 +100,7 @@ class RegistrationForm extends FormBase {
 
     // Check if email exists
     $ids = \Drupal::entityQuery('user')
+      ->accessCheck(TRUE)
       ->condition('mail', Xss::filter($form_state->getValues()['email']))
       ->range(0, 1)
       ->execute();

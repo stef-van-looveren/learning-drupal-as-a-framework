@@ -6,5 +6,6 @@ dependencies:
     - offer
 id: offer.full
 label: full
+description: ''
 targetEntityType: offer
 cache: true

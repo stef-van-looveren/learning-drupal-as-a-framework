@@ -93,7 +93,8 @@ class OfferDynamicOperationLinks extends FieldPluginBase
       '#links' => $operations
     ];
 
-    return render($dropbutton);
+    $renderedOutput = \Drupal::service('renderer')->render($dropbutton);
+    return $renderedOutput;
 
   }
 }

@@ -111,6 +111,7 @@ class Bid extends EditorialContentEntityBase {
   public function hasRevisions() {
     $id = $this->id();
     $query = \Drupal::entityQuery('bid')
+      ->accessCheck(TRUE)
       ->condition('id', $id);
     $count = $query->allRevisions()->count()->execute();
     if($count > 1) {
@@ -127,6 +128,7 @@ class Bid extends EditorialContentEntityBase {
   public function getRevisionsList() {
     $id = $this->id();
     $query = \Drupal::entityQuery('bid')
+      ->accessCheck(TRUE)
       ->condition('id', $id);
     $revisions = $query->allRevisions()->execute();
     return $revisions;
