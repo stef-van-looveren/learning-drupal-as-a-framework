@@ -1,4 +1,4 @@
-## Learning Drupal as a framework
+## Learning Drupal as a framework (Drupal 10 compatible)
 <div id="top"></div>
 
 [![amazon][amazon-shield]][amazon-url]
@@ -27,7 +27,9 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-First, set up a fresh Drupal 9 installation. <strong>Currently, the code is tested against the latest D9 (9.5). Please be a bit patient, I'm planning to port to D10 quickly :).</strong>
+<strong>Important!</strong>
+<br>For Drupal 9, use the drupal9 branch.
+<br>For Drupal 10, use either the drupal10 or the main branch.
 
 ### Installation
 
@@ -57,7 +59,8 @@ The following steps are needed to set up the platform:
 - [x] Video course of chapter 2 "Drupal developer essentials" [[available on Udemy](https://www.udemy.com/course/drupal-developer-essentials/?referralCode=6F987BF65CE0B8712455)]
 - [x] Video course of chapter 3 "Start with custom entities" [[available on Udemy](https://www.Udemy.com/course/drupal-9-module-development-introduction-to-custom-entities/?referralCode=1C71EE042C3332B885BA)]
 - [x] Video course of chapters 4 and 5 "Advanced Drupal development" [[available on Udemy](https://www.Udemy.com/course/drupal-advanced-module-development-guide/?referralCode=DC8449A4E64CBA91B6C5)]
-
+- [x] Code updated for Drupal 10
+- 
 <!-- LICENSE -->
 ## License
 
