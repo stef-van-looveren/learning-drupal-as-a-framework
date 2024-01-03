@@ -137,6 +137,7 @@ Class SeedDataGenerator {
           // also save a revision for the 1650 bid to the bike
           if($bidListItem['bid'] == 1650) {
             $query = \Drupal::entityQuery('bid')
+              ->accessCheck(FALSE)
               ->condition('user_id', $bidListItem['user_id'])
               ->condition('offer_id', $bidListItem['offer_id']);
             $results = $query->execute();

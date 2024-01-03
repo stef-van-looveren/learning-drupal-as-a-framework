@@ -26,7 +26,7 @@
         "drupal/devel": "^5.0.0",
         "drupal/gin": "^3.0@RC",
         "drupal/upgrade_status": "^4.0",
-        "drush/drush": "^12",
+        "drush/drush": "^11.0",
         "vlucas/phpdotenv": "^5.1",
         "webflo/drupal-finder": "^1.2"
     },
